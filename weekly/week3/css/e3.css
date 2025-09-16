@@ -7,10 +7,23 @@ body {
 	marign-right: 5%;
 	font-family: 
 }
-
+header{
+	background-color:#ffb3d1;
+	padding-bottom:20px;
+}
+nav {
+	color: aliceblue;
+}
 
 li{
 	list-style-type: none;
 	display:inline;
 	margin-righ: 10px;
+}
+.posttime{
+	color:darkred;
+	font-size: 0.7em;
+}
+h2, p {
+	color:darkblue;
 }
