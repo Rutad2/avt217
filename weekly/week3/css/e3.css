@@ -7,3 +7,8 @@ body {
 	marign-right: 5%;
 	font-family: 
 }
+
+li{
+	list-style-type: none;
+	display:inline;
+}
