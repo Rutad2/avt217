@@ -10,3 +10,16 @@ body {
 h1 {
   font-family: estrojeune, sans-serif;
 }
+
+a:link {
+  color:darkblue;
+}
+a:visited {
+  color:darkmagenta;
+}
+a:hover {
+  color:chartreuse;
+}
+a:active {
+  color:burlywood;
+}
