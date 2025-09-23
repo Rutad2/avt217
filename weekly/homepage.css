@@ -13,12 +13,14 @@ h1 {
 
 a:link {
   color:darkblue;
+  text-decoration:none;
 }
 a:visited {
   color:darkmagenta;
 }
 a:hover {
   color:chartreuse;
+  text-decoration:underline;
 }
 a:active {
   color:burlywood;
