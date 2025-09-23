@@ -25,3 +25,13 @@ a:hover {
 a:active {
   color:burlywood;
 }
+
+.weekly{
+  width:45%;
+  float:left;
+}
+
+#project {
+  width:45%;
+  float:left;
+}
