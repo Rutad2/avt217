@@ -36,3 +36,9 @@ a:active {
   width:45%;
   float:left;
 }
+
+.demo {
+  font-weight: 100;
+  font-style: italic;
+  color:brown;
+}
