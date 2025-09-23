@@ -8,6 +8,12 @@ body {
     line-height:1.6em;
 }
 
+#wrapper{
+  margin-left: 5%;
+  background-color:cornsilk;
+  float:left;
+}
+
 h1 {
   font-family: estrojeune, sans-serif;
 }
