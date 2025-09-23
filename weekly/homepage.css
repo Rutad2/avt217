@@ -1,6 +1,25 @@
 @charset "UTF-8";
 /* CSS Document*/
+body {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 
 h1 {
   font-family: estrojeune, sans-serif;
+}
+
+a:link {
+  color:darkblue;
+}
+a:visited {
+  color:darkmagenta;
+}
+a:hover {
+  color:chartreuse;
+}
+a:active {
+  color:burlywood;
 }
