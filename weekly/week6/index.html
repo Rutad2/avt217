@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Week 6 — CSS Box & Positioning</title>
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Sticky header (position: sticky) -->
+  <header class="site-header">
+    <h1>Week 6: CSS Box & Positioning</h1>
+    <nav>
+      <a href="#relative">Relative</a>
+      <a href="#absolute">Absolute</a>
+      <a href="#float">Float</a>
+      <a href="#sticky">Sticky</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Box 1: plain box + image -->
+    <section class="box intro">
+      <h2>1) Intro + Image</h2>
+      <p>This page demonstrates six <code>&lt;div&gt;</code> boxes and four positioning techniques.</p>
+
+      <!-- Use your local image -->
+      <img class="hero" src="img/beach.jpg" alt="A calm beach" />
+
+      <!-- If you don't have a local image yet, uncomment the external image line below and remove the one above -->
+      <!-- <img class="hero" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="A calm beach" /> -->
+    </section>
+
+    <!-- Box 2: position: relative (+ absolute badge inside) -->
+    <section id="relative" class="box relative-box">
+      <h2>2) Relative Box</h2>
+      <p>This <strong>container</strong> is <code>position: relative</code>. The pink badge is absolutely positioned <em>inside</em> this box.</p>
+      <div class="badge">REL</div> <!-- Absolutely positioned child -->
+    </section>
+
+    <!-- Box 3: position: absolute (inside a relative wrapper) -->
+    <section id="absolute" class="box absolute-wrapper">
+      <h2>3) Absolute Positioning</h2>
+      <p>The blue square is <code>position: absolute</code> within this <code>position: relative</code> wrapper.</p>
+      <div class="pin"></div>
+    </section>
+
+    <!-- Box 4: float example (image floats, text wraps) -->
+    <section id="float" class="box float-card clearfix">
+      <h2>4) Float Layout</h2>
+      <img
+        src="https://images.unsplash.com/photo-1519681393784-d120267933ba"
+        alt="Abstract notebook"
+      />
+      <p>
+        The image is <code>float: left</code>, so this text wraps around it. Floats are old-school layout,
+        but they’re still useful for simple text wraps. The <code>.clearfix</code> utility prevents this
+        floated image from collapsing the parent’s height.
+      </p>
+      <p>
+        Tip: prefer modern layout (Flexbox/Grid) for most page structure. Floats are for text wrap moments.
+      </p>
+    </section>
+
+    <!-- Box 5: sticky section title inside a tall container -->
+    <section id="sticky" class="box tall">
+      <h2 class="sticky-subtitle">5) Sticky Subtitle</h2>
+      <p>Scroll within this tall box. The subtitle sticks to the top edge of this section.</p>
+      <div class="filler">
+        <p>Lots of filler content…</p>
+        <p>More filler content…</p>
+        <p>Even more filler content to force scrolling…</p>
+        <p>Keep going…</p>
+        <p>Almost there…</p>
+        <p>Done!</p>
+      </div>
+    </section>
+
+    <!-- Box 6: plain decorative box to reach 6 total -->
+    <section class="box plain">
+      <h2>6) Plain Box</h2>
+      <p>Just one more box to meet the “at least six” requirement.</p>
+    </section>
+  </main>
+
+  <!-- Fixed element (position: fixed) -->
+  <a class="help-chip" href="#top" title="Back to top">▲</a>
+
+  <footer class="site-footer">
+    <p>© 2025 Your Name — AVT 217 Week 6</p>
+  </footer>
+</body>
+</html>
