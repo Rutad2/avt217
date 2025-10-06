@@ -1,0 +1,170 @@
+/* Basic reset-ish */
+* { box-sizing: border-box; }
+
+:root {
+  --bg: #fff8fb;
+  --ink: #1c1c28;
+  --ink-soft: #4b4b63;
+  --brand: #ff7ab6;
+  --accent: #5aa9ff;
+  --accent-2: #ffc857;
+  --surface: #ffffff;
+  --border: #e8e8f0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.5;
+}
+
+/* Sticky header (position: sticky) */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.site-header nav a {
+  margin-right: 0.75rem;
+  text-decoration: none;
+  color: var(--ink-soft);
+}
+.site-header nav a:hover { color: var(--ink); }
+
+main {
+  max-width: 900px;
+  margin: 1.25rem auto;
+  padding: 0 1rem 4rem;
+}
+
+/* Generic box styling */
+.box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+
+.box h2 {
+  margin-top: 0;
+}
+
+/* Box 1: intro + hero image */
+.intro .hero {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+}
+
+/* Box 2: relative with absolute badge */
+.relative-box {
+  position: relative; /* Parent context for the absolute child */
+  min-height: 120px;
+}
+.relative-box .badge {
+  position: absolute; /* Absolute child */
+  top: -12px;
+  right: -12px;
+  background: var(--brand);
+  color: white;
+  font-weight: 700;
+  padding: 0.35rem 0.5rem;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(255, 122, 182, 0.35);
+}
+
+/* Box 3: absolute pin inside relative wrapper */
+.absolute-wrapper {
+  position: relative;  /* anchor for .pin */
+  min-height: 160px;
+}
+.absolute-wrapper .pin {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: var(--accent);
+  top: 16px;
+  right: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(90, 169, 255, 0.35);
+  border: 3px solid white;
+}
+
+/* Box 4: float example */
+.float-card img {
+  width: 220px;
+  max-width: 45%;
+  float: left;           /* FLOAT */
+  margin: 0 1rem 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Box 5: sticky subtitle inside tall content */
+.tall {
+  height: 420px;                 /* Force internal scroll */
+  overflow: auto;                /* Scroll inside the box */
+  position: relative;
+}
+.sticky-subtitle {
+  position: sticky;              /* STICKY */
+  top: 0;
+  background: var(--surface);
+  padding: 0.5rem 0;
+  margin: -0.5rem -0.5rem 0.75rem; /* subtle edge-to-edge look */
+  border-bottom: 1px solid var(--border);
+  z-index: 1;
+}
+.tall .filler {
+  padding-right: 0.25rem;
+}
+
+/* Box 6: plain */
+.plain { background: #fff; }
+
+/* Fixed “back to top” chip (position: fixed) */
+.help-chip {
+  position: fixed;       /* FIXED */
+  right: 1rem;
+  bottom: 1rem;
+  text-decoration: none;
+  background: var(--accent-2);
+  color: #2a2a2a;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  color: var(--ink-soft);
+  padding: 2rem 1rem 3.5rem; /* make room for fixed chip */
+}
