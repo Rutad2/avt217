@@ -1,29 +1,27 @@
 @charset "UTF-8";
-/* Beginner CSS that applies the seven contrasts using only text, spacing, and color. */
 
-/* Page basics */
 body{
-  background-color:#ffe6f0;    /* soft class color */
-  color:#0a1a3a;               /* dark blue text */
+  background-color:#ffe6f0;
+  color:#0a1a3a;
   margin-left:10%;
   margin-right:5%;
   line-height:1.65;
-  font-family:"Lora", Georgia, "Times New Roman", serif; /* STRUCTURE: body in serif */
+  font-family:"Lora", Georgia, "Times New Roman", serif;
 }
 
-/* Container widths for nicer reading */
-.page-header, main, .page-footer{ max-width:72ch; margin-left:auto; margin-right:auto; }
+.page-header, main{ max-width:72ch; margin-left:auto; margin-right:auto; }
 
-/* Headings: use sans = STRUCTURE contrast */
-h1, h2{ font-family:"Montserrat", Arial, Helvetica, sans-serif; color:#0a1a3a; margin-top:0; }
+h1, h2{
+  font-family:"Montserrat", Arial, Helvetica, sans-serif;
+  color:#0a1a3a;
+  margin-top:0;
+}
 h1{ font-size:2rem; font-weight:900; }
 h2{ font-size:1.25rem; font-weight:700; }
 
-/* Byline + small-caps = FORM contrast */
 .sc{ font-variant: small-caps; letter-spacing:.04em; }
 .byline{ margin-top:6px; color:#283b6b; }
 
-/* Simple “cards” for sections */
 .card{
   background:#ffeaf2;
   border:2px solid #f7c8dd;
@@ -32,7 +30,6 @@ h2{ font-size:1.25rem; font-weight:700; }
   margin:16px 0;
 }
 
-/* Navigation */
 .toc{ padding-left:0; margin:12px 0 0 0; }
 .toc li{ list-style:none; display:inline; margin-right:8px; }
 .toc a{
@@ -45,30 +42,19 @@ h2{ font-size:1.25rem; font-weight:700; }
 .toc a:hover{ background:#ffd0e6; }
 .toc a:focus{ outline:2px solid #b3005c; outline-offset:2px; }
 
-/* Lede paragraph slightly larger = SIZE */
 .lede{ font-size:1.1em; }
 
-/* 1) SIZE */
 .big{ font-size:1.35em; font-weight:700; }
-
-/* 2) WEIGHT */
 .bold{ font-weight:700; }
-
-/* 3) FORM (already using small-caps; show caps word) */
 .caps{ font-variant: small-caps; }
 
-/* 4) STRUCTURE shown via font families (headings vs body) */
-
-/* 5) TEXTURE: dense vs open paragraphs */
 .dense{ line-height:1.35; letter-spacing:.1px; }
 .open { line-height:1.9;  letter-spacing:.4px; }
 
-/* 6) COLOR: subtle accent */
 .accent{ color:#b3005c; font-weight:700; }
 
-/* 7) DIRECTION: rotate a word from the original sentence */
 .vertical{
-  writing-mode: vertical-rl;     /* cleaner than transform rotate */
+  writing-mode: vertical-rl;
   text-orientation: mixed;
   background:#ffd6e8;
   color:#b3005c;
@@ -77,10 +63,6 @@ h2{ font-size:1.25rem; font-weight:700; }
   margin:0 4px;
 }
 
-/* Footer */
-.page-footer{ color:#0a1a3a; font-size:.9em; margin:24px 0 40px; }
-
-/* Small-screen niceties */
 @media (max-width:480px){
   body{ margin-left:6%; margin-right:6%; }
   .toc a{ display:inline-block; margin-bottom:6px; }
