@@ -16,7 +16,7 @@ html, body {
   padding: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
   line-height: 1.5;
 }
 
@@ -32,17 +32,13 @@ html, body {
   align-items: baseline;
 }
 
-.site-header h1 {
-  margin: 0;
-  font-size: 1.1rem;
-}
+.site-header h1 { margin: 0; font-size: 1.1rem; }
 
 .site-header nav a {
   margin-right: 0.75rem;
   text-decoration: none;
   color: var(--ink-soft);
 }
-
 .site-header nav a:hover { color: var(--ink); }
 
 main {
@@ -59,14 +55,9 @@ main {
   margin: 1rem 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
+.box h2 { line-height: 1.2; margin: 0 0 0.5rem 0; }
 
-.box h2 {
-  line-height: 1.2;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-section { scroll-margin-top: 72px; }
+div { scroll-margin-top: 72px; }
 
 img { display: block; max-width: 100%; height: auto; }
 
@@ -79,12 +70,7 @@ img { display: block; max-width: 100%; height: auto; }
   border: 1px solid var(--border);
 }
 
-.relative-box {
-  position: relative;
-  min-height: 120px;
-  overflow: visible;
-}
-
+.relative-box { position: relative; min-height: 120px; overflow: visible; }
 .relative-box .badge {
   position: absolute;
   top: -12px;
@@ -98,11 +84,7 @@ img { display: block; max-width: 100%; height: auto; }
   transform: translate(0,0);
 }
 
-.absolute-wrapper {
-  position: relative;
-  min-height: 160px;
-}
-
+.absolute-wrapper { position: relative; min-height: 160px; }
 .absolute-wrapper .pin {
   position: absolute;
   width: 80px;
@@ -123,19 +105,9 @@ img { display: block; max-width: 100%; height: auto; }
   border-radius: 8px;
   border: 1px solid var(--border);
 }
+.clearfix::after { content: ""; display: table; clear: both; }
 
-.clearfix::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.tall {
-  height: 420px;
-  overflow: auto;
-  position: relative;
-}
-
+.tall { height: 420px; overflow: auto; position: relative; }
 .sticky-subtitle {
   position: sticky;
   top: 0;
@@ -145,7 +117,6 @@ img { display: block; max-width: 100%; height: auto; }
   border-bottom: 1px solid var(--border);
   z-index: 1;
 }
-
 .tall .filler { padding-right: 0.25rem; }
 
 .plain { background: #fff; }
