@@ -17,3 +17,20 @@ section{
   margin: 0 5px;
   background-color:aquamarines;
 }
+
+#flexbox{
+  width:1200px;
+  height: 300px;
+  display:flex;
+  justify-content: space-evenly;
+  background-colo:cornglowerblue;
+  margin: 0 auto;
+}
+
+.flexcolumn{
+  width:200px;
+  height:200px;
+  background-colo:beige;
+  margin-top: 20px;
+}
+  
