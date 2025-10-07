@@ -23,14 +23,14 @@ section{
   height: 300px;
   display:flex;
   justify-content: space-evenly;
-  background-colo: cornflowerblue;
+  background-color: cornflowerblue;
   margin: 0 auto;
 }
 
 .flexcolumn{
   width:200px;
   height:200px;
-  background-colo: beige;
+  background-color: beige;
   margin-top: 20px;
 }
   
@@ -38,7 +38,7 @@ section{
 .flexcolumn1{
   width: 200px;
   height: 200px;
-  background-colo: beige;
+  background-color: beige;
   margin-top: 20px;
 }
   
