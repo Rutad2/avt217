@@ -31,6 +31,7 @@ h2{ font-size:1.15rem; font-weight:700; }
   border-radius:12px;
   padding:16px;
   margin:16px 0;
+  box-shadow: 0 1px 0 rgba(0,0,0,.04);
 }
 
 .toc{ padding-left:0; margin:12px 0 0 0; }
@@ -65,22 +66,8 @@ h2{ font-size:1.15rem; font-weight:700; }
   margin:0 4px;
 }
 
-/* all-pink section shades */
-main .card:nth-of-type(1) { background:#fff0f6; border-color:#f9cfe2; }
-main .card:nth-of-type(2) { background:#ffe8f2; border-color:#f7c6dc; }
-main .card:nth-of-type(3) { background:#ffeaf3; border-color:#f7c8de; }
-main .card:nth-of-type(4) { background:#fff2f7; border-color:#f9d6e6; }
-main .card:nth-of-type(5) { background:#ffe9f1; border-color:#f6c7d9; }
-main .card:nth-of-type(6) { background:#fff3f6; border-color:#f9d4de; }
-main .card:nth-of-type(7) { background:#ffeef5; border-color:#f7ccde; }
-main .card:nth-of-type(8) { background:#fff1f6; border-color:#f7d0e1; }
-main .card:nth-of-type(9) { background:#ffedf4; border-color:#f6c9dc; }
-main .card:nth-of-type(10){ background:#fff2f7; border-color:#f7d6e6; }
-
-main .card h2 { color:#5a2a43; }
-
 @media (max-width:480px){
-  body{ margin-left:6%; margin-right:6%; font-size:0.98rem; }
+  body{ margin-left:6%; margin-right:6%; font-size:.98rem; }
   .toc a{ display:inline-block; margin-bottom:6px; }
   h1{ font-size:1.6rem; }
 }
