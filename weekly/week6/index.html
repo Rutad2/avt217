@@ -18,54 +18,54 @@
   </header>
 
   <main>
-    <section class="box intro">
-      <h2>1) Intro + Image</h2>
-      <p>This page demonstrates six <code>&lt;div&gt;</code> boxes and four positioning techniques.</p>
-      <img class="hero" src="img/beach.jpg" alt="A calm beach" />
-    </section>
+    <div class="box intro" id="intro">
+      <h2>1) Intro & Image</h2>
+      <p>Six boxes, four+ positioning techniques (relative, absolute, fixed, sticky, float). Styles are in an external CSS file.</p>
+      <img class="hero" src="img/beach.jpg" alt="Hero image" />
+    </div>
 
-    <section id="relative" class="box relative-box">
-      <h2>2) Relative Box</h2>
-      <p>This <strong>container</strong> is <code>position: relative</code>. The pink badge is absolutely positioned inside this box.</p>
+    <div class="box relative-box" id="relative">
+      <h2>2) Relative Positioning (parent)</h2>
+      <p>This container is <code>position: relative</code>. It creates the positioning context for the badge.</p>
       <div class="badge">REL</div>
-    </section>
+    </div>
 
-    <section id="absolute" class="box absolute-wrapper">
-      <h2>3) Absolute Positioning</h2>
-      <p>The blue square is <code>position: absolute</code> within this <code>position: relative</code> wrapper.</p>
+    <div class="box absolute-wrapper" id="absolute">
+      <h2>3) Absolute Positioning (child)</h2>
+      <p>The blue square is <code>position: absolute</code> inside a relative wrapper.</p>
       <div class="pin"></div>
-    </section>
+    </div>
 
-    <section id="float" class="box float-card clearfix">
-      <h2>4) Float Layout</h2>
-      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Abstract notebook" />
-      <p>The image is <code>float: left</code>, so this text wraps around it. The <code>.clearfix</code> utility prevents the parent from collapsing.</p>
-      <p>Prefer Flexbox/Grid for layout; floats are for text wrap moments.</p>
-    </section>
+    <div class="box float-card clearfix" id="float">
+      <h2>4) Float Wrap Example</h2>
+      <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba" alt="Notebook and stars" />
+      <p>The image is floated left so text wraps around it. The clearfix keeps the parent’s height intact.</p>
+    </div>
 
-    <section id="sticky" class="box tall">
-      <h2 class="sticky-subtitle">5) Sticky Subtitle</h2>
-      <p>Scroll within this tall box. The subtitle sticks to the top edge of this section.</p>
+    <div class="box tall" id="sticky">
+      <h2 class="sticky-subtitle">5) Sticky Inside a Scrollable Box</h2>
+      <p>Scroll this box. The subtitle sticks to the top edge using <code>position: sticky</code>.</p>
       <div class="filler">
-        <p>Lots of filler content…</p>
-        <p>More filler content…</p>
-        <p>Even more filler content to force scrolling…</p>
-        <p>Keep going…</p>
-        <p>Almost there…</p>
-        <p>Done!</p>
+        <p>Paragraph one of filler content.</p>
+        <p>Paragraph two of filler content.</p>
+        <p>Paragraph three of filler content.</p>
+        <p>Paragraph four of filler content.</p>
+        <p>Paragraph five of filler content.</p>
+        <p>Paragraph six of filler content.</p>
       </div>
-    </section>
+    </div>
 
-    <section class="box plain">
+    <div class="box plain" id="six">
       <h2>6) Plain Box</h2>
-      <p>Just one more box to meet the “at least six” requirement.</p>
-    </section>
+      <p>Additional content box to reach six total.</p>
+    </div>
   </main>
 
-  <a class="help-chip" href="#top" title="Back to top">▲</a>
+  <a class="help-chip" href="#intro" title="Back to top">▲</a>
 
   <footer class="site-footer">
     <p>© 2025 Your Name — AVT 217 Week 6</p>
   </footer>
 </body>
 </html>
+
