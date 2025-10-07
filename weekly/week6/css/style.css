@@ -1,4 +1,3 @@
-/* Basic reset-ish */
 * { box-sizing: border-box; }
 
 :root {
@@ -21,7 +20,6 @@ html, body {
   line-height: 1.5;
 }
 
-/* Sticky header (position: sticky) */
 .site-header {
   position: sticky;
   top: 0;
@@ -44,6 +42,7 @@ html, body {
   text-decoration: none;
   color: var(--ink-soft);
 }
+
 .site-header nav a:hover { color: var(--ink); }
 
 main {
@@ -52,7 +51,6 @@ main {
   padding: 0 1rem 4rem;
 }
 
-/* Generic box styling */
 .box {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -63,26 +61,32 @@ main {
 }
 
 .box h2 {
+  line-height: 1.2;
   margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
-/* Box 1: intro + hero image */
+section { scroll-margin-top: 72px; }
+
+img { display: block; max-width: 100%; height: auto; }
+
 .intro .hero {
-  display: block;
   width: 100%;
   max-height: 360px;
   object-fit: cover;
   border-radius: 10px;
   margin-top: 0.5rem;
+  border: 1px solid var(--border);
 }
 
-/* Box 2: relative with absolute badge */
 .relative-box {
-  position: relative; /* Parent context for the absolute child */
+  position: relative;
   min-height: 120px;
+  overflow: visible;
 }
+
 .relative-box .badge {
-  position: absolute; /* Absolute child */
+  position: absolute;
   top: -12px;
   right: -12px;
   background: var(--brand);
@@ -91,13 +95,14 @@ main {
   padding: 0.35rem 0.5rem;
   border-radius: 999px;
   box-shadow: 0 6px 16px rgba(255, 122, 182, 0.35);
+  transform: translate(0,0);
 }
 
-/* Box 3: absolute pin inside relative wrapper */
 .absolute-wrapper {
-  position: relative;  /* anchor for .pin */
+  position: relative;
   min-height: 160px;
 }
+
 .absolute-wrapper .pin {
   position: absolute;
   width: 80px;
@@ -110,46 +115,43 @@ main {
   border: 3px solid white;
 }
 
-/* Box 4: float example */
 .float-card img {
   width: 220px;
   max-width: 45%;
-  float: left;           /* FLOAT */
+  float: left;
   margin: 0 1rem 0.5rem 0;
   border-radius: 8px;
   border: 1px solid var(--border);
 }
+
 .clearfix::after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Box 5: sticky subtitle inside tall content */
 .tall {
-  height: 420px;                 /* Force internal scroll */
-  overflow: auto;                /* Scroll inside the box */
+  height: 420px;
+  overflow: auto;
   position: relative;
 }
+
 .sticky-subtitle {
-  position: sticky;              /* STICKY */
+  position: sticky;
   top: 0;
   background: var(--surface);
   padding: 0.5rem 0;
-  margin: -0.5rem -0.5rem 0.75rem; /* subtle edge-to-edge look */
+  margin: -0.5rem -0.5rem 0.75rem;
   border-bottom: 1px solid var(--border);
   z-index: 1;
 }
-.tall .filler {
-  padding-right: 0.25rem;
-}
 
-/* Box 6: plain */
+.tall .filler { padding-right: 0.25rem; }
+
 .plain { background: #fff; }
 
-/* Fixed “back to top” chip (position: fixed) */
 .help-chip {
-  position: fixed;       /* FIXED */
+  position: fixed;
   right: 1rem;
   bottom: 1rem;
   text-decoration: none;
@@ -162,9 +164,13 @@ main {
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Footer */
 .site-footer {
   text-align: center;
   color: var(--ink-soft);
-  padding: 2rem 1rem 3.5rem; /* make room for fixed chip */
+  padding: 2rem 1rem 3.5rem;
+}
+
+@media (max-width: 480px) {
+  .help-chip { bottom: 0.75rem; right: 0.75rem; }
+  .site-footer { padding-bottom: 4.5rem; }
 }
