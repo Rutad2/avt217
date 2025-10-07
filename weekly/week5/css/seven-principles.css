@@ -2,10 +2,11 @@
 
 body{
   background-color:#ffe6f0;
-  color:#0a1a3a;
+  color:#2d0f1f;
   margin-left:10%;
   margin-right:5%;
-  line-height:1.65;
+  font-size:1rem;
+  line-height:1.7;
   font-family:"Lora", Georgia, "Times New Roman", serif;
 }
 
@@ -13,19 +14,21 @@ body{
 
 h1, h2{
   font-family:"Montserrat", Arial, Helvetica, sans-serif;
-  color:#0a1a3a;
+  color:#2d0f1f;
   margin-top:0;
 }
-h1{ font-size:2rem; font-weight:900; }
-h2{ font-size:1.25rem; font-weight:700; }
+h1{ font-size:1.8rem; font-weight:900; line-height:1.2; }
+h2{ font-size:1.15rem; font-weight:700; }
 
 .sc{ font-variant: small-caps; letter-spacing:.04em; }
-.byline{ margin-top:6px; color:#283b6b; }
+.byline{ margin-top:6px; color:#5a2a43; }
+
+.page-header{ background:#ffb3d1; padding:20px 16px; border-radius:12px; }
 
 .card{
   background:#ffeaf2;
   border:2px solid #f7c8dd;
-  border-radius:8px;
+  border-radius:12px;
   padding:16px;
   margin:16px 0;
 }
@@ -34,21 +37,21 @@ h2{ font-size:1.25rem; font-weight:700; }
 .toc li{ list-style:none; display:inline; margin-right:8px; }
 .toc a{
   text-decoration:none;
-  color:#0a1a3a;
-  background:#ffd6e8;
+  color:#2d0f1f;
+  background:#ffd3e6;
   padding:4px 8px;
-  border-radius:6px;
+  border-radius:8px;
 }
-.toc a:hover{ background:#ffd0e6; }
+.toc a:hover{ background:#ffcade; }
 .toc a:focus{ outline:2px solid #b3005c; outline-offset:2px; }
 
-.lede{ font-size:1.1em; }
-.big{ font-size:1.35em; font-weight:700; }
+.lede{ font-size:1.05rem; }
+.big{ font-size:1.2rem; font-weight:700; }
 .bold{ font-weight:700; }
 .caps{ font-variant: small-caps; }
 
-.dense{ line-height:1.35; letter-spacing:.1px; }
-.open { line-height:1.9;  letter-spacing:.4px; }
+.dense{ line-height:1.4; letter-spacing:.1px; }
+.open { line-height:1.9; letter-spacing:.3px; }
 
 .accent{ color:#b3005c; font-weight:700; }
 
@@ -58,40 +61,26 @@ h2{ font-size:1.25rem; font-weight:700; }
   background:#ffd6e8;
   color:#b3005c;
   padding:2px 6px;
-  border-radius:4px;
+  border-radius:6px;
   margin:0 4px;
 }
 
+/* all-pink section shades */
+main .card:nth-of-type(1) { background:#fff0f6; border-color:#f9cfe2; }
+main .card:nth-of-type(2) { background:#ffe8f2; border-color:#f7c6dc; }
+main .card:nth-of-type(3) { background:#ffeaf3; border-color:#f7c8de; }
+main .card:nth-of-type(4) { background:#fff2f7; border-color:#f9d6e6; }
+main .card:nth-of-type(5) { background:#ffe9f1; border-color:#f6c7d9; }
+main .card:nth-of-type(6) { background:#fff3f6; border-color:#f9d4de; }
+main .card:nth-of-type(7) { background:#ffeef5; border-color:#f7ccde; }
+main .card:nth-of-type(8) { background:#fff1f6; border-color:#f7d0e1; }
+main .card:nth-of-type(9) { background:#ffedf4; border-color:#f6c9dc; }
+main .card:nth-of-type(10){ background:#fff2f7; border-color:#f7d6e6; }
+
+main .card h2 { color:#5a2a43; }
+
 @media (max-width:480px){
-  body{ margin-left:6%; margin-right:6%; }
+  body{ margin-left:6%; margin-right:6%; font-size:0.98rem; }
   .toc a{ display:inline-block; margin-bottom:6px; }
+  h1{ font-size:1.6rem; }
 }
-
-/* color accents */
-body { background-color:#ffe6f0; color:#0a1a3a; }
-.page-header { background:#ffb3d1; padding:20px 16px; border-radius:8px; }
-.card { background:#ffeaf2; border-color:#f7c8dd; }
-.toc a { background:#ffd6e8; }
-.toc a:hover { background:#ffd0e6; }
-
-main .card:nth-of-type(1) { background:#ffeeff; border-color:#e8c6ff; }
-main .card:nth-of-type(2) { background:#eaf7ff; border-color:#bfe7ff; }
-main .card:nth-of-type(3) { background:#fff7e8; border-color:#ffe0a6; }
-main .card:nth-of-type(4) { background:#eafcf3; border-color:#bdebd7; }
-main .card:nth-of-type(5) { background:#f5eaff; border-color:#d9c4ff; }
-main .card:nth-of-type(6) { background:#fff0f0; border-color:#ffc7c7; }
-main .card:nth-of-type(7) { background:#eef6ff; border-color:#c6dcff; }
-main .card:nth-of-type(8) { background:#fff5ea; border-color:#ffd5ad; }
-main .card:nth-of-type(9) { background:#eefcf1; border-color:#c6f0d2; }
-main .card:nth-of-type(10){ background:#f6eefc; border-color:#dbc9f5; }
-
-main .card:nth-of-type(1) h2 { color:#6c3fb8; }
-main .card:nth-of-type(2) h2 { color:#0f6ebd; }
-main .card:nth-of-type(3) h2 { color:#b56a00; }
-main .card:nth-of-type(4) h2 { color:#1f8a57; }
-main .card:nth-of-type(5) h2 { color:#5c45c9; }
-main .card:nth-of-type(6) h2 { color:#b34040; }
-main .card:nth-of-type(7) h2 { color:#315fb8; }
-main .card:nth-of-type(8) h2 { color:#b3631a; }
-main .card:nth-of-type(9) h2 { color:#2a8c55; }
-main .card:nth-of-type(10) h2{ color:#7a52cf; }
