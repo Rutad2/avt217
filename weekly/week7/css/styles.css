@@ -1,0 +1,170 @@
+/* ===== quick-tune variables (measure in Figma, then paste) ===== */
+/* Section A (“e7”) */
+:root{
+  --frame-width: 1100px;       /* outer frame width */
+  --frame-pad: 18px;           /* white-ish margin inside frame */
+  --strip-top-h: 22px;
+  --strip-mid-h: 10px;
+  --strip-bottom-h: 24px;
+  --e7-col-w: 240px;           /* width of each of the four columns */
+  --e7-col-h: 320px;           /* height of each column */
+  --e7-col-gap: 18px;          /* white gaps between columns */
+  /* Section B (“Desktop-1”) */
+  --hero-w: 240px;
+  --hero-h: 180px;
+  --hero-top-margin: 32px;
+  --hero-tab-w: 70px;
+  --hero-tab-h: 14px;
+
+  --tiles-col-gap: 18px;
+  --tiles-row-gap: 14px;
+  --tile-w: 120px;
+  --tile-h: 28px;
+
+  --sidebar-w: 200px;
+  --sidebar-h: 300px;
+
+  --badge-d: 64px;
+
+  --footer-w: 520px;
+  --footer-h: 48px;
+  --footer-top-gap: 26px;
+}
+
+/* ===== reset / helpers ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background:#111; color:#222; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; padding: 24px; }
+.cf::after{ content:""; display:block; clear:both; }
+
+/* ===== Section A: e7 (uses floats for the four columns) ===== */
+.frame--e7{
+  width: var(--frame-width);
+  margin: 0 auto 48px;
+  background: transparent;
+  padding: var(--frame-pad);
+  outline: 1px solid rgba(255,255,255,0.08); /* just to see bounds while building */
+}
+
+.strip--top{
+  height: var(--strip-top-h);
+  background: #d77479;           /* pick any colors you like */
+  margin-bottom: 6px;
+}
+.strip--mid{
+  height: var(--strip-mid-h);
+  background: #d6b187;
+  margin-bottom: 12px;
+}
+.strip--bottom{
+  height: var(--strip-bottom-h);
+  background: #7c3f3f;
+  margin-top: 12px;
+}
+
+/* columns area with inner padding that creates the white border */
+.e7-columns{
+  background: #f3f3f3;
+  padding: 12px;
+  border: 6px solid #eee;
+}
+
+/* four equal columns floated with fixed width + internal gaps */
+.e7-col{
+  float: left;
+  width: var(--e7-col-w);
+  height: var(--e7-col-h);
+  background: #c9a99a;
+  border: 6px solid #e7e7e7;
+  margin-right: var(--e7-col-gap);
+}
+
+/* remove right gap on the last one */
+.e7-col:last-child{ margin-right: 0; }
+
+/* ===== Section B: Desktop-1 (mix of flex + absolute-style spacing) ===== */
+.frame--desktop1{
+  width: var(--frame-width);
+  margin: 0 auto;
+  background: #f5f7f9;
+  padding: 24px;
+  position: relative;
+}
+
+.hero{
+  width: var(--hero-w);
+  height: var(--hero-h);
+  margin: var(--hero-top-margin) auto 10px;
+  background: linear-gradient(135deg, #b178ff, #6ac3ff);
+  outline: 6px solid rgba(0,0,0,0.08);
+  background-blend-mode: multiply;
+}
+.hero-tab{
+  width: var(--hero-tab-w);
+  height: var(--hero-tab-h);
+  margin: 6px auto 20px;
+  background: #e7e7e7;
+  border-radius: 4px;
+}
+
+/* two-column working area */
+.desktop1-layout{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* left: grid of nav tiles */
+.nav-tiles{
+  flex: 1;
+}
+.tiles-row{
+  display: flex;
+  justify-content: center;            /* resembles your Figma spacing */
+  gap: var(--tiles-col-gap);
+  margin-bottom: var(--tiles-row-gap);
+}
+.tile{
+  width: var(--tile-w);
+  height: var(--tile-h);
+  background: #d9ead3;               /* light green */
+  border-radius: 4px;
+  outline: 1px solid rgba(0,0,0,0.06);
+}
+
+/* right: tall sidebar */
+.sidebar{
+  width: var(--sidebar-w);
+  height: var(--sidebar-h);
+  background: #d6e5c9;
+  border-radius: 2px;
+  outline: 1px solid rgba(0,0,0,0.06);
+}
+
+/* circular badge bottom-right-ish */
+.badge{
+  width: var(--badge-d);
+  height: var(--badge-d);
+  border-radius: 50%;
+  background: repeating-linear-gradient(45deg, #e0e0e0 0 6px, #f3f3f3 6px 12px);
+  position: absolute;
+  right: 30px;
+  bottom: 110px;
+  opacity: 0.85;
+}
+
+/* footer bar */
+.footer-bar{
+  width: var(--footer-w);
+  height: var(--footer-h);
+  background: #dfe9f5;
+  margin: var(--footer-top-gap) auto 10px;
+  border-radius: 6px;
+  outline: 1px solid rgba(0,0,0,0.06);
+}
+
+/* small view friendliness for your GitHub Pages */
+@media (max-width: 1240px){
+  :root{ --frame-width: 94vw; }
+  .e7-col{ width: calc((100% - 3*var(--e7-col-gap) - 24px) / 4); } /* keep 4-up feel on smaller screens */
+}
