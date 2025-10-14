@@ -1,92 +1,56 @@
+@charset "UTF-8";
+/* all layout via div + flex; tweak sizes/colors via variables */
 :root{
-  --frame-width: 1100px;
-  --frame-pad: 18px;
-  --strip-top-h: 22px;
-  --strip-mid-h: 10px;
-  --strip-bottom-h: 24px;
-  --e7-col-w: 240px;
-  --e7-col-h: 380px;
-  --e7-col-gap: 18px;
-  --hero-w: 240px;
-  --hero-h: 180px;
-  --hero-top-margin: 32px;
-  --hero-tab-w: 70px;
-  --hero-tab-h: 14px;
-  --tiles-col-gap: 18px;
-  --tiles-row-gap: 14px;
-  --tile-w: 120px;
-  --tile-h: 28px;
-  --sidebar-w: 200px;
-  --sidebar-h: 300px;
-  --badge-d: 64px;
-  --footer-w: 520px;
-  --footer-h: 48px;
-  --footer-top-gap: 26px;
+  --page-width: 1200px;
+
+  --top-h: 64px;
+  --white-h: 12px;
+  --brown-h: 16px;
+  --bottom-h: 40px;
+
+  --panel-h: 300px;
+  --panel-pad: 16px;     /* white frame around the 4 cards */
+  --gap: 16px;           /* white gutters between cards */
+
+  /* pick any palette you like */
+  --top: #d87773;        /* salmon */
+  --brown: #9a6b44;
+  --panel-bg: #ffffff;   /* gutters + frame */
+  --card: #cfb39f;       /* beige cards */
+  --bottom: #6b2e2e;     /* dark maroon */
+  --page-bg: #ffffff;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#111;color:#222;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:24px}
-.cf::after{content:"";display:block;clear:both}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-.frame--e7{
-  width:var(--frame-width);
-  margin:0 auto 48px;
-  background:transparent;
-  padding:var(--frame-pad);
-  outline:1px solid rgba(255,255,255,.08)
-}
-.strip--top{height:var(--strip-top-h);background:#d77479;margin-bottom:6px}
-.strip--mid{height:var(--strip-mid-h);background:#d6b187;margin-bottom:12px}
-.strip--bottom{height:var(--strip-bottom-h);background:#7c3f3f;margin-top:12px}
+body { background: var(--page-bg); font-family: system-ui, sans-serif; }
 
-.e7-columns{background:#f3f3f3;padding:12px;border:6px solid #eee}
-.e7-col{
-  float:left;
-  width:var(--e7-col-w);
-  height:var(--e7-col-h);
-  background:#c9a99a;
-  border:8px solid #f1efeb;
-  margin-right:var(--e7-col-gap)
-}
-.e7-col:last-child{margin-right:0}
-
-.frame--desktop1{
-  width:var(--frame-width);
-  margin:0 auto;
-  background:#f5f7f9;
-  padding:24px;
-  position:relative
-}
-.hero{
-  width:var(--hero-w);
-  height:var(--hero-h);
-  margin:var(--hero-top-margin) auto 10px;
-  background:linear-gradient(135deg,#b178ff,#6ac3ff);
-  border:4px solid #f1efeb
-}
-.hero-tab{width:var(--hero-tab-w);height:var(--hero-tab-h);margin:6px auto 20px;background:#e7e7e7;border-radius:4px;border:4px solid #f1efeb}
-
-.desktop1-layout{display:flex;justify-content:space-between;align-items:flex-start;gap:24px}
-.nav-tiles{flex:1}
-.tiles-row{display:flex;justify-content:center;gap:var(--tiles-col-gap);margin-bottom:var(--tiles-row-gap)}
-.tile{width:var(--tile-w);height:var(--tile-h);background:#d9ead3;border-radius:4px;border:4px solid #f1efeb}
-
-.sidebar{width:var(--sidebar-w);height:var(--sidebar-h);background:#d6e5c9;border-radius:2px;border:4px solid #f1efeb}
-
-.badge{
-  width:var(--badge-d);
-  height:var(--badge-d);
-  border-radius:50%;
-  background:repeating-linear-gradient(45deg,#e0e0e0 0 6px,#f3f3f3 6px 12px);
-  position:absolute;
-  right:30px;
-  bottom:110px;
-  opacity:.85
+.wrap {
+  width: var(--page-width);
+  margin: 0 auto;
 }
 
-.footer-bar{width:var(--footer-w);height:var(--footer-h);background:#dfe9f5;margin:var(--footer-top-gap) auto 10px;border-radius:6px;border:4px solid #f1efeb}
+/* bands */
+.band { width: 100%; }
+.band-top    { height: var(--top-h);    background: var(--top); }
+.band-white  { height: var(--white-h);  background: #fff; }
+.band-brown  { height: var(--brown-h);  background: var(--brown); }
+.band-bottom { height: var(--bottom-h); background: var(--bottom); }
 
-@media (max-width:1240px){
-  :root{--frame-width:94vw}
-  .e7-col{width:calc((100% - 3*var(--e7-col-gap) - 24px)/4)}
+/* 4-column panel */
+.panel{
+  height: var(--panel-h);
+  background: var(--panel-bg);
+  padding: var(--panel-pad);
+  display: flex;
+  gap: var(--gap);                 /* white gutters */
+  align-items: stretch;
+}
+
+/* each card fills height; widths split evenly with the gap accounted for */
+.card{
+  background: var(--card);
+  flex: 1 1 calc((100% - 3*var(--gap)) / 4);
+  /* optional subtle border to mimic figma’s white stroke look */
+  outline: 0 solid #fff;
 }
