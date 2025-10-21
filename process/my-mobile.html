@@ -1,55 +1,55 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>p2.3: First iteration of mobile designs — District Guide</title>
   <style>
-    :root { --w: 420px; --ink:#111; --muted:#666; --bg:#f7f7fb; }
-    *{box-sizing:border-box}
-    body{margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg);}
-    header, main, footer{max-width:var(--w); margin:0 auto; padding:16px}
-    header h1{margin:6px 0 2px; font-size:1.2rem}
-    header p{margin:0; color:var(--muted); font-size:.95rem}
-    .grid{display:grid; gap:16px}
-    figure{margin:0; background:#fff; border:1px solid #e7e7ee; border-radius:12px; overflow:hidden}
-    img{display:block; width:100%; height:auto}
-    figcaption{padding:10px 12px 14px; font-size:.95rem; line-height:1.35}
-    .kicker{display:block; font-size:.8rem; color:var(--muted); letter-spacing:.02em; text-transform:uppercase; margin-bottom:2px}
-    footer{color:var(--muted); font-size:.9rem; padding-bottom:28px}
-    a{color:#2a57ff; text-decoration:none}
-    a:hover{text-decoration:underline}
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #111; background: #f7f7fb; }
+    .wrap { max-width: 420px; margin: 0 auto; padding: 16px; }
+    h1 { font-size: 20px; margin: 6px 0 2px; }
+    p.lead { margin: 0 0 10px; color: #666; }
+    figure { margin: 12px 0; border: 1px solid #e2e2e8; background: #fff; }
+    img { display: block; width: 100%; height: auto; }
+    figcaption { padding: 8px 10px 12px; font-size: 14px; line-height: 1.35; }
+    .kicker { display: block; font-size: 12px; color: #666; text-transform: uppercase; margin-bottom: 2px; }
+    a { color: #2a57ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    footer { color: #666; font-size: 14px; padding-top: 8px; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>p2.3: First iteration of mobile designs</h1>
-    <p>District Guide — four mobile mockups (320&nbsp;px) with real content.</p>
-  </header>
+  <div class="wrap">
+    <header>
+      <h1>p2.3: First iteration of mobile designs</h1>
+      <p class="lead">District Guide — four mobile mockups (320 px) with real content.</p>
+    </header>
 
-  <main>
-    <div class="grid">
+    <main>
       <figure>
-        <img src="Home-mobile.png" alt="Home — hero, quick actions, and primary navigation" />
+        <img src="img/Home-mobile.png" alt="Home — hero, quick actions, and primary navigation">
         <figcaption><span class="kicker">Page 1</span><strong>Home</strong> — landing with hero, highlights, and CTAs.</figcaption>
       </figure>
+
       <figure>
-        <img src="about-mobile.png" alt="About — brief history, best times to visit, getting around" />
+        <img src="img/about-mobile.png" alt="About — brief history, best times to visit, getting around">
         <figcaption><span class="kicker">Page 2</span><strong>About</strong> — brief history, transit tips, and free must-dos.</figcaption>
       </figure>
+
       <figure>
-        <img src="sights-mobile.png" alt="Sights — list of landmarks with images and Details links" />
+        <img src="img/sights-mobile.png" alt="Sights — landmark cards with one-line blurbs and Details links">
         <figcaption><span class="kicker">Page 3</span><strong>Top Sights</strong> — landmark cards with one-line blurbs.</figcaption>
       </figure>
+
       <figure>
-        <img src="24hours-mobile.png" alt="24 Hours — hour-by-hour itinerary blocks for a one-day visit" />
+        <img src="img/24hours-mobile.png" alt="24 Hours — one-day itinerary with flexible food options">
         <figcaption><span class="kicker">Page 4</span><strong>24 Hours</strong> — flexible one-day itinerary with food options.</figcaption>
       </figure>
-    </div>
-  </main>
+    </main>
 
-  <footer>
-    <p><a href="../weekly/index.html">Back to Weekly Index</a></p>
-  </footer>
+    <footer>
+      <p><a href="../weekly/index.html">Back to Weekly Index</a></p>
+    </footer>
+  </div>
 </body>
 </html>
