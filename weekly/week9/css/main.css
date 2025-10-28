@@ -1,53 +1,181 @@
 @charset "UTF-8";
 /* CSS Document */
+
+/* ---------- Base / tokens ---------- */
+:root{
+  --bg-dark: #1b140f;
+  --cream:   #fff7ef;
+  --ink:     #2b211c;
+  --accent:  #c56a2c;   /* pumpkin */
+  --accent2: #b14e2b;   /* cinnamon */
+}
+
+*{ box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+
+body {
+  text-align: center;
+  color: var(--cream);
+  /* FRONT background image (mobile view) */
+  background: url("../img/pie.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size:    cover;
+  -o-background-size:      cover;
+  background-size:         cover;
+
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Container */
+#container {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+/* Text defaults */
+p {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0.4em 0 0;
+}
+
+/* Front (mobile) */
+.front{
+  width: min(680px, 92vw);
+  padding: clamp(24px, 6vw, 48px);
+  background: rgba(0,0,0,.35);
+  border-radius: 24px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+#cursive{
+  margin: 0 0 .2em;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: clamp(40px, 12vw, 72px);
+  line-height: .95;
+  text-shadow: 0 3px 18px rgba(0,0,0,.35);
+}
+
+.front p{
+  display: inline-block;
+  padding: .5em .9em;
+  background: var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+}
+
+/* Inside (desktop) */
+.inside{
+  width: min(1100px, 92vw);
+  min-height: clamp(520px, 70vh, 760px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 60px rgba(0,0,0,.25);
+  /* desktop gets its own background (page color) */
+  background:
+    radial-gradient(1200px 600px at -20% -20%, rgba(197,106,44,.3), transparent 60%),
+    radial-gradient(900px 500px at 120% 120%, rgba(177,78,43,.2), transparent 60%),
+    var(--cream);
+  color: var(--ink);
+}
+
+/* Panels with subtle paper texture */
+.panel{
+  padding: clamp(28px, 5vw, 64px);
+  background: url("../img/paper.jpg") center/cover no-repeat;
+}
+
+.panel.left{
+  border-right: 1px solid rgba(0,0,0,.06);
+}
+
+.inside h2{
+  margin: 0 0 .4em;
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 56px);
+  color: var(--accent2);
+}
+
+.message{
+  margin: .2em 0 1.2em;
+  line-height: 1.7;
+  font-size: clamp(16px, 1.6vw, 20px);
+  text-transform: none; /* normal sentence case inside */
+  letter-spacing: 0;
+  color: #3a2f28;
+}
+
+.sig{
+  margin-top: 1.2em;
+  font-weight: 600;
+  color: #5a4a41;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.panel.right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gratitudes{
+  list-style: "🍂  ";
+  margin: 0;
+  padding: 0 0 0 1.1em;
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.9;
+  max-width: 36ch;
+}
+
+/* ---------- Visibility rules ---------- */
+/* Default: desktop is shown, mobile hidden */
+.mobile-only { display: none; }
+.desktop-only { display: block; }
+
+/* ---------- Mobile styles (<= 768px) ---------- */
+/* tell browser to do the followings when screen is at and narrower than 768px */
+@media only screen and (max-width: 768px) {
+
   body {
-    text-align: center;
-    background:url("../img/pie.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    /* keep pie.jpg full-bleed on mobile front */
   }
 
-#container {
-
+  #container {
+    padding: 16px;
   }
 
   p {
-    text-transform:uppercase;
+    /* already defined for front; overrides go here if needed */
   }
- 
 
+  #cursive {
+    /* size defined above with clamp; mobile is covered */
+  }
 
-/* tell browser don't display it when screen is wider than 768px */
   .mobile-only {
-    display: none;
+    display: block;  /* show front on mobile */
   }
 
-/* tell browser to do the followings when screen is at and narrower than 768px */
-  @media only screen and (max-width: 768px) {
-	  
-    body {
- 
-    }
-	  
-	#container {
- 
-    }
-	   
-    p {
+  /* Now the style and content for desktop will not be displayed */
+  .desktop-only {
+    display: none;   /* hide inside on mobile */
+  }
 
-    }
-	  
-	#cursive {
-  	}
-	  
-    .mobile-only {
-   
-    }
-	  /* Now the style and content for desktop will not be displied */
-    .desktop-only {
-  
-    }
+  /* Make the front card breathe edge-to-edge a bit more on very small screens */
+  @media (max-width: 360px){
+    .front { padding: 16px; }
+  }
+} /* don't forget to close the styles for mobile */
 
-} /* don't forget to close the styles for mobile/
+/* Accessibility preferences */
+@media (prefers-reduced-motion: reduce){
+  * { animation: none !important; transition: none !important; }
+}
