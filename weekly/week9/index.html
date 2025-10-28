@@ -1,26 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>Thanksgiving Card</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Google Fonts -->
+    <meta charset="utf-8" />
+    <title>Thanksgiving Card — Week 9</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Festive&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" />
   </head>
-
   <body>
-    <div id="container">
-      <!-- Front (mobile) -->
-      <p class="mobile-only">Happy</p>
-      <p class="mobile-only" id="cursive">Thanksgiving</p>
+    <main id="card">
+      <!-- FRONT (shows < 768px) -->
+      <section class="front mobile-only">
+        <div class="front-wrap">
+          <h1 class="title">Gather</h1>
+          <p class="tag">and give thanks</p>
+        </div>
+      </section>
 
-      <!-- Inside (desktop) -->
-      <p class="desktop-only">AS SWEET AS PUMPKIN PIE</p>
-    </div>
+      <!-- INSIDE (shows ≥ 768px) -->
+      <section class="inside desktop-only" aria-label="Inside message">
+        <div class="inside-left">
+          <h2>Thankful For You</h2>
+          <p class="msg">
+            May your table be full, your home warm, and your heart lighter than yesterday.
+            Here’s to cozy meals, loud laughs, and the people who make them matter.
+          </p>
+          <p class="sign">— With love</p>
+        </div>
+        <div class="inside-right">
+          <ul class="list">
+            <li>A seat saved just for you</li>
+            <li>Stories passed like dishes</li>
+            <li>Second slices encouraged</li>
+            <li>Warm mugs after dark</li>
+          </ul>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
