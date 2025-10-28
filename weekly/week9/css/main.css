@@ -1,160 +1,70 @@
 @charset "UTF-8";
 
-:root{
-  --bg-dark:#1b140f;
-  --cream:#fff7ef;
-  --ink:#2b211c;
-  --accent:#c56a2c;
-  --accent2:#b14e2b;
+/* Base styling */
+body {
+  margin: 0;
+  text-align: center;
+  background: url("../img/pie.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #8B0000;
+  font-family: 'Arimo', sans-serif;
 }
 
-*{box-sizing:border-box;}
-html,body{height:100%;margin:0;}
-
-body{
-  text-align:center;
-  color:var(--cream);
-  background:url("../img/pie.jpg") no-repeat center center fixed;
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  -o-background-size:cover;
-  background-size:cover;
-  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-#container{
-  min-height:100svh;
-  display:grid;
-  place-items:center;
-  padding:24px;
+/* Typography */
+p {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
 }
 
-p{
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  margin:.4em 0 0;
+/* Script font for Thanksgiving */
+#cursive {
+  font-family: 'Festive', cursive;
+  font-size: 4rem;
+  text-transform: none;
+  color: #b14e2b;
 }
 
-.front{
-  width:min(680px,92vw);
-  padding:clamp(24px,6vw,48px);
-  background:rgba(0,0,0,.45);
-  border-radius:24px;
-  backdrop-filter:blur(2px);
-  box-shadow:0 10px 30px rgba(0,0,0,.38);
+/* Hide desktop by default */
+.desktop-only {
+  display: none;
 }
 
-#cursive{
-  margin:0 0 .2em;
-  font-family:"Playfair Display",serif;
-  font-weight:700;
-  font-size:clamp(40px,12vw,72px);
-  line-height:.95;
-  text-shadow:0 3px 18px rgba(0,0,0,.35);
+/* Show mobile by default */
+.mobile-only {
+  display: block;
 }
 
-.front p{
-  display:inline-block;
-  padding:.5em .9em;
-  background:var(--accent);
-  border-radius:999px;
-  box-shadow:0 8px 24px rgba(0,0,0,.25);
-}
+/* MEDIA QUERY — Switch views */
+@media only screen and (min-width: 768px) {
+  body {
+    background: url("../img/pie2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #7b1e00;
+  }
 
-.inside{
-  width:min(980px,92vw);
-  min-height:clamp(520px,68vh,720px);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 18px 60px rgba(0,0,0,.25);
-  background:
-    linear-gradient(rgba(255,255,255,.86),rgba(255,255,255,.86)),
-    url("../img/paper.jpg") center/cover no-repeat;
-  color:#2c2320;
-}
+  .mobile-only {
+    display: none;
+  }
 
-.panel{
-  background:transparent;
-  padding:clamp(28px,5vw,64px);
-}
-
-.panel.left{
-  border-right:1px solid rgba(0,0,0,.06);
-}
-
-.inside h2{
-  margin:0 0 .4em;
-  font-family:"Playfair Display",serif;
-  font-weight:700;
-  font-size:clamp(34px,4.2vw,56px);
-  color:#b14e2b;
-  text-shadow:0 1px 0 rgba(255,255,255,.6);
-}
-
-.message{
-  margin:.35em 0 1.2em;
-  line-height:1.75;
-  font-size:clamp(16px,1.6vw,20px);
-  color:#3a2f28;
-  text-transform:none;
-  letter-spacing:0;
-}
-
-.sig{
-  margin-top:1.2em;
-  font-weight:600;
-  color:#5a4a41;
-  text-transform:none;
-  letter-spacing:0;
-}
-
-.panel.right{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.gratitudes{
-  list-style:none;
-  margin:0;
-  padding:0;
-  max-width:36ch;
-  font-size:clamp(16px,1.5vw,20px);
-  line-height:1.9;
-  color:#2c2320;
-}
-
-.gratitudes li{
-  position:relative;
-  padding-left:1.6em;
-  margin:.15em 0;
-}
-
-.gratitudes li::before{
-  content:"🍂";
-  position:absolute;
-  left:0;
-  top:0;
-  transform:translateY(2px);
-  font-size:1em;
-  opacity:.9;
-}
-
-.mobile-only{display:none;}
-.desktop-only{display:block;}
-
-@media only screen and (max-width:768px){
-  body{}
-  #container{padding:16px;}
-  .mobile-only{display:block;}
-  .desktop-only{display:none;}
-  .front{padding:16px;}
-}
-
-
-
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;}
+  .desktop-only {
+    display: block;
+    font-family: 'Arimo', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background-color: rgba(255,255,255,0.6);
+    padding: 20px 40px;
+    border-radius: 12px;
+  }
 }
