@@ -47,7 +47,7 @@ p {
 /* MEDIA QUERY — Switch views */
 @media only screen and (min-width: 768px) {
   body {
-    background: url("../img/pie2.jpg") no-repeat center center fixed;
+    background: url("../img/pie.jpeg") no-repeat center center fixed;
     background-size: cover;
     color: #7b1e00;
   }
