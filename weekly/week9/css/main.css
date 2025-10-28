@@ -153,15 +153,7 @@ p{
   .front{padding:16px;}
 }
 
-@media (min-width:768px){
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.25);
-    pointer-events:none;
-  }
-}
+
 
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;}
