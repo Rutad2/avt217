@@ -5,12 +5,12 @@
   <title>District Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inder&display=swap" rel="stylesheet">
 
-  <!-- icons (for socials) -->
+  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
@@ -19,8 +19,9 @@
       --text: #0b0b0b;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: "Montserrat", Arial, sans-serif;
+      font-family: "Inder", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #fff;
       color: var(--text);
     }
@@ -49,11 +50,11 @@
       border-radius: 999px;
       cursor: pointer;
       font-size: 14px;
+      font-family: "Inder", sans-serif;
     }
     .logo {
-      font-family: "Playfair Display", serif;
+      font-family: "DM Serif Display", serif;
       font-size: 30px;
-      font-weight: 700;
     }
     .right-nav {
       display: flex;
@@ -68,6 +69,7 @@
     .nav-links a {
       text-decoration: none;
       color: #000;
+      font-family: "Inder", sans-serif;
     }
     .nav-links a:hover { text-decoration: underline; }
     .search-btn {
@@ -80,13 +82,14 @@
       gap: 6px;
       cursor: pointer;
       font-size: 14px;
+      font-family: "Inder", sans-serif;
     }
 
     /* SIDE MENU */
     .side-menu {
       position: fixed;
       top: 0;
-      left: -240px; /* hidden */
+      left: -240px;
       width: 240px;
       height: 100vh;
       background: #ffffff;
@@ -98,17 +101,15 @@
       transition: left 0.25s ease;
       z-index: 100;
     }
-    .side-menu.active {
-      left: 0;
-    }
+    .side-menu.active { left: 0; }
     .side-menu h2 {
-      font-family: "Playfair Display", serif;
+      font-family: "DM Serif Display", serif;
       margin-bottom: 10px;
     }
     .side-menu a {
       text-decoration: none;
       color: #000;
-      font-size: 15px;
+      font-family: "Inder", sans-serif;
     }
     .side-menu .close-btn {
       background: none;
@@ -137,7 +138,7 @@
       padding: 50px 20px 30px;
     }
     .intro h1 {
-      font-family: "Playfair Display", serif;
+      font-family: "DM Serif Display", serif;
       font-size: 40px;
       margin-bottom: 10px;
     }
@@ -146,6 +147,7 @@
       margin: 0 auto;
       line-height: 1.4;
       color: #333;
+      font-family: "Inder", sans-serif;
     }
     .intro-buttons {
       margin-top: 30px;
@@ -161,6 +163,7 @@
       border-radius: 8px;
       font-size: 14px;
       cursor: pointer;
+      font-family: "Inder", sans-serif;
     }
     .btn:hover { opacity: 0.9; }
 
@@ -179,7 +182,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-family: "Playfair Display", serif;
+      font-family: "DM Serif Display", serif;
       font-size: 22px;
       text-decoration: none;
       transition: transform 0.15s ease;
@@ -199,14 +202,12 @@
     .footer-bg {
       position: absolute;
       inset: 0;
-      background: url("footer-bg.jpg") center/cover no-repeat;
-      /* we show the image at full strength, then tint it */
+      background: url("img/footer-bg.jpg") center/cover no-repeat;
     }
-    /* your green at 62% */
     .footer-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(47, 95, 74, 0.62);
+      background: rgba(47, 95, 74, 0.62); /* 62% green */
     }
     .footer-inner {
       position: relative;
@@ -216,7 +217,7 @@
       text-align: center;
     }
     .footer-title {
-      font-family: "Playfair Display", serif;
+      font-family: "DM Serif Display", serif;
       font-size: 32px;
       margin-bottom: 30px;
     }
@@ -230,12 +231,14 @@
     .footer-col h3 {
       font-weight: 600;
       margin-bottom: 10px;
+      font-family: "Inder", sans-serif;
     }
     .footer-col ul {
       list-style: none;
     }
     .footer-col li {
       margin-bottom: 6px;
+      font-family: "Inder", sans-serif;
     }
     .footer-col a {
       color: #fff;
@@ -249,6 +252,7 @@
       border: none;
       border-radius: 3px;
       margin-bottom: 8px;
+      font-family: "Inder", sans-serif;
     }
     .newsletter button {
       padding: 6px 15px;
@@ -257,6 +261,7 @@
       color: #fff;
       border-radius: 3px;
       cursor: pointer;
+      font-family: "Inder", sans-serif;
     }
 
     .contact-socials {
@@ -265,15 +270,14 @@
       gap: 12px;
       font-size: 18px;
     }
-    .contact-socials a {
-      color: #fff;
-    }
+    .contact-socials a { color: #fff; }
 
     .footer-bottom {
       position: relative;
       text-align: center;
       padding: 15px 0 5px;
       font-size: 14px;
+      font-family: "Inder", sans-serif;
     }
 
     @media (min-width: 1300px) {
@@ -322,8 +326,7 @@
 
   <!-- HERO IMAGE -->
   <div class="hero-img">
-    <!-- your actual filename -->
-    <img src="hero-dc.jpeg" alt="Washington DC">
+    <img src="img/hero-dc.jpeg" alt="Washington DC">
   </div>
 
   <!-- INTRO -->
