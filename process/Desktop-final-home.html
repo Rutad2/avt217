@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- icons -->
+  <!-- icons (for socials) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
@@ -34,6 +34,8 @@
       justify-content: space-between;
       background: #fff;
       gap: 20px;
+      position: relative;
+      z-index: 30;
     }
     .left-nav {
       display: flex;
@@ -78,6 +80,42 @@
       gap: 6px;
       cursor: pointer;
       font-size: 14px;
+    }
+
+    /* SIDE MENU */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -240px; /* hidden */
+      width: 240px;
+      height: 100vh;
+      background: #ffffff;
+      border-right: 1px solid #ddd;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      transition: left 0.25s ease;
+      z-index: 100;
+    }
+    .side-menu.active {
+      left: 0;
+    }
+    .side-menu h2 {
+      font-family: "Playfair Display", serif;
+      margin-bottom: 10px;
+    }
+    .side-menu a {
+      text-decoration: none;
+      color: #000;
+      font-size: 15px;
+    }
+    .side-menu .close-btn {
+      background: none;
+      border: none;
+      font-size: 18px;
+      align-self: flex-end;
+      cursor: pointer;
     }
 
     /* HERO IMAGE */
@@ -161,31 +199,32 @@
     .footer-bg {
       position: absolute;
       inset: 0;
-      background: url("footer-bg.jpg") center/cover no-repeat; /* your image */
-      opacity: 1;
-      pointer-events: none;
+      background: url("footer-bg.jpg") center/cover no-repeat;
+      /* we show the image at full strength, then tint it */
     }
-    /* green overlay at 62% */
+    /* your green at 62% */
     .footer-overlay {
       position: absolute;
       inset: 0;
       background: rgba(47, 95, 74, 0.62);
-      pointer-events: none;
     }
-    .footer-content {
+    .footer-inner {
       position: relative;
-      padding: 50px 50px 30px;
-      display: flex;
-      gap: 80px;
-      justify-content: center;
-      align-items: flex-start;
-      text-align: left;
-      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 45px 40px 25px;
+      text-align: center;
     }
     .footer-title {
       font-family: "Playfair Display", serif;
       font-size: 32px;
-      margin-bottom: 14px;
+      margin-bottom: 30px;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: center;
+      gap: 80px;
+      flex-wrap: wrap;
       text-align: left;
     }
     .footer-col h3 {
@@ -220,24 +259,23 @@
       cursor: pointer;
     }
 
-    .socials {
-      margin-top: 14px;
+    .contact-socials {
+      margin-top: 12px;
       display: flex;
-      gap: 14px;
-      font-size: 20px;
+      gap: 12px;
+      font-size: 18px;
     }
-    .socials a {
+    .contact-socials a {
       color: #fff;
     }
 
     .footer-bottom {
       position: relative;
       text-align: center;
-      padding: 15px 0 25px;
+      padding: 15px 0 5px;
       font-size: 14px;
     }
 
-    /* desktop width cap for main sections, footer stays centered */
     @media (min-width: 1300px) {
       .hero-img,
       .intro,
@@ -251,10 +289,20 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- SIDE MENU -->
+  <aside class="side-menu" id="sideMenu">
+    <button class="close-btn" id="closeMenu">&times;</button>
+    <h2>Menu</h2>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Sights</a>
+    <a href="#">24 Hours</a>
+  </aside>
+
+  <!-- TOP NAV -->
   <header class="top-nav">
     <div class="left-nav">
-      <button class="menu-btn">Menu</button>
+      <button class="menu-btn" id="openMenu">Menu</button>
       <div class="logo">District Guide</div>
     </div>
     <div class="right-nav">
@@ -274,7 +322,8 @@
 
   <!-- HERO IMAGE -->
   <div class="hero-img">
-    <img src="hero-dc.jpg" alt="Washington DC">
+    <!-- your actual filename -->
+    <img src="hero-dc.jpeg" alt="Washington DC">
   </div>
 
   <!-- INTRO -->
@@ -287,7 +336,7 @@
     </div>
   </section>
 
-  <!-- FEATURE ROW (clickable) -->
+  <!-- FEATURE ROW -->
   <section class="feature-row">
     <a href="#" class="feature-card">Top Sights</a>
     <a href="#" class="feature-card">Plan Your Day</a>
@@ -298,46 +347,55 @@
   <footer class="footer">
     <div class="footer-bg"></div>
     <div class="footer-overlay"></div>
-    <div class="footer-content">
-      <div>
-        <div class="footer-title">District Guide</div>
-        <div class="socials">
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-regular fa-envelope"></i></a>
+    <div class="footer-inner">
+      <div class="footer-title">District Guide</div>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>About</h3>
+          <ul>
+            <li><a href="#">Our Mission</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li>info@districtguide.com</li>
+            <li>(123)-456-7890</li>
+          </ul>
+          <div class="contact-socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-col newsletter">
+          <h3>Newsletter</h3>
+          <p>Stay up to date</p>
+          <input type="email" placeholder="Email address">
+          <br>
+          <button>Subscribe</button>
         </div>
       </div>
-
-      <div class="footer-col">
-        <h3>About</h3>
-        <ul>
-          <li><a href="#">Our Mission</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">FAQs</a></li>
-        </ul>
+      <div class="footer-bottom">
+        © 2024 District Guide. All rights reserves.
       </div>
-
-      <div class="footer-col">
-        <h3>Contact</h3>
-        <ul>
-          <li>info@districtguide.com</li>
-          <li>(123)-456-7890</li>
-        </ul>
-      </div>
-
-      <div class="footer-col newsletter">
-        <h3>Newsletter</h3>
-        <p>Stay up to date</p>
-        <input type="email" placeholder="Email address">
-        <br>
-        <button>Subscribe</button>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © 2024 District Guide. All rights reserves.
     </div>
   </footer>
 
+  <script>
+    const openBtn = document.getElementById('openMenu');
+    const closeBtn = document.getElementById('closeMenu');
+    const sideMenu = document.getElementById('sideMenu');
+
+    openBtn.addEventListener('click', () => {
+      sideMenu.classList.add('active');
+    });
+    closeBtn.addEventListener('click', () => {
+      sideMenu.classList.remove('active');
+    });
+  </script>
 </body>
 </html>
