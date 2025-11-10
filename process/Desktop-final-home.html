@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>District Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- fonts similar to your mockup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #2f5f4a;
+      --cream: #f6f4f0;
+      --text: #0b0b0b;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Montserrat", Arial, sans-serif;
+      background: #fff;
+      color: var(--text);
+    }
+    /* NAVBAR */
+    .top-nav {
+      width: 100%;
+      padding: 20px 50px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+    }
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      font-weight: 700;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 16px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* HERO IMAGE */
+    .hero-img {
+      width: 100%;
+      height: 260px;
+      overflow: hidden;
+    }
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* INTRO SECTION */
+    .intro {
+      text-align: center;
+      padding: 50px 20px 30px;
+    }
+    .intro h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    .intro p {
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.4;
+      color: #333;
+    }
+    .intro-buttons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .btn {
+      background: var(--green);
+      color: #fff;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    /* 3 FEATURE BOXES */
+    .feature-row {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      padding: 40px 50px 70px;
+    }
+    .feature-card {
+      background: var(--green);
+      width: 230px;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      border-radius: 0;
+    }
+
+    /* FOOTER */
+    .footer {
+      position: relative;
+      margin-top: 30px;
+      background: #123;
+      color: #fff;
+      overflow: hidden;
+    }
+    .footer-bg {
+      position: absolute;
+      inset: 0;
+      background: url("footer-bg.jpg") center/cover no-repeat; /* swap to your image */
+      opacity: 0.38;
+      pointer-events: none;
+    }
+    .footer-content {
+      position: relative;
+      padding: 50px 50px 30px;
+      display: flex;
+      gap: 90px;
+      align-items: flex-start;
+    }
+    .footer-title {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+    .footer-col h3 {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col li {
+      margin-bottom: 6px;
+    }
+    .footer-col a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      text-decoration: underline;
+    }
+    .newsletter input[type="email"] {
+      width: 160px;
+      padding: 6px 8px;
+      border: none;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+    .newsletter button {
+      padding: 6px 15px;
+      border: none;
+      background: #213d33;
+      color: #fff;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    .icons {
+      margin-top: 14px;
+      display: flex;
+      gap: 12px;
+      font-size: 18px;
+    }
+    .footer-bottom {
+      position: relative;
+      text-align: center;
+      padding: 15px 0 25px;
+      font-size: 14px;
+    }
+
+    /* simple desktop cap */
+    @media (min-width: 1300px) {
+      .hero-img,
+      .top-nav,
+      .intro,
+      .feature-row,
+      .footer {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      body {
+        background: #fff;
+      }
+      .footer {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="top-nav">
+    <div class="logo">District Guide</div>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Sights</a>
+      <a href="#">24 Hours</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO IMAGE -->
+  <div class="hero-img">
+    <!-- swap to your DC image -->
+    <img src="hero-dc.jpg" alt="Washington DC">
+  </div>
+
+  <!-- INTRO -->
+  <section class="intro">
+    <h1>Explore Washington, DC</h1>
+    <p>Your guide to sight, history, and a perfect day in the capital.</p>
+    <div class="intro-buttons">
+      <button class="btn">View Sights</button>
+      <button class="btn">Plan Your Day</button>
+    </div>
+  </section>
+
+  <!-- FEATURE ROW -->
+  <section class="feature-row">
+    <div class="feature-card">Top Sights</div>
+    <div class="feature-card">Plan Your Day</div>
+    <div class="feature-card">About DC</div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-bg"></div>
+    <div class="footer-content">
+      <div>
+        <div class="footer-title">District Guide</div>
+        <div class="icons">
+          <!-- you can swap these for real icons (Font Awesome) -->
+          <span>📷</span>
+          <span>🐦</span>
+          <span>📱</span>
+          <span>✉️</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>About</h3>
+        <ul>
+          <li><a href="#">Our Mission</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <ul>
+          <li>info@districtguide.com</li>
+          <li>(123)-456-7890</li>
+        </ul>
+      </div>
+
+      <div class="footer-col newsletter">
+        <h3>Newsletter</h3>
+        <p>Stay up to date</p>
+        <input type="email" placeholder="Email address">
+        <br>
+        <button>Subscribe</button>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 District Guide. All rights reserves.
+    </div>
+  </footer>
+
+</body>
+</html>
