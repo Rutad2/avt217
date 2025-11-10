@@ -5,52 +5,79 @@
   <title>District Guide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
- 
+  <!-- fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
 
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
   <style>
     :root {
       --green: #2f5f4a;
-      --cream: #f6f4f0;
       --text: #0b0b0b;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: "Montserrat", Arial, sans-serif;
       background: #fff;
       color: var(--text);
     }
+
     /* NAVBAR */
     .top-nav {
       width: 100%;
-      padding: 20px 50px 16px;
+      padding: 18px 50px 14px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       background: #fff;
+      gap: 20px;
+    }
+    .left-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .menu-btn {
+      border: 1px solid #ddd;
+      background: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 14px;
     }
     .logo {
       font-family: "Playfair Display", serif;
       font-size: 30px;
       font-weight: 700;
     }
+    .right-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       font-size: 16px;
     }
     .nav-links a {
       text-decoration: none;
       color: #000;
     }
-    .nav-links a:hover {
-      text-decoration: underline;
+    .nav-links a:hover { text-decoration: underline; }
+    .search-btn {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 999px;
+      padding: 6px 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      font-size: 14px;
     }
 
     /* HERO IMAGE */
@@ -66,7 +93,7 @@
       display: block;
     }
 
-    /* INTRO SECTION */
+    /* INTRO */
     .intro {
       text-align: center;
       padding: 50px 20px 30px;
@@ -97,11 +124,9 @@
       font-size: 14px;
       cursor: pointer;
     }
-    .btn:hover {
-      opacity: 0.9;
-    }
+    .btn:hover { opacity: 0.9; }
 
-    /* 3 FEATURE BOXES */
+    /* FEATURE CARDS */
     .feature-row {
       display: flex;
       gap: 40px;
@@ -118,35 +143,50 @@
       color: #fff;
       font-family: "Playfair Display", serif;
       font-size: 22px;
-      border-radius: 0;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
+    .feature-card:hover {
+      transform: translateY(-3px);
+      opacity: 0.95;
     }
 
     /* FOOTER */
     .footer {
       position: relative;
       margin-top: 30px;
-      background: #123;
       color: #fff;
       overflow: hidden;
     }
     .footer-bg {
       position: absolute;
       inset: 0;
-      background: url("img/footer-bg.jpg") center/cover no-repeat; 
-      opacity: 0.38;
+      background: url("footer-bg.jpg") center/cover no-repeat; /* your image */
+      opacity: 1;
+      pointer-events: none;
+    }
+    /* green overlay at 62% */
+    .footer-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(47, 95, 74, 0.62);
       pointer-events: none;
     }
     .footer-content {
       position: relative;
       padding: 50px 50px 30px;
       display: flex;
-      gap: 90px;
+      gap: 80px;
+      justify-content: center;
       align-items: flex-start;
+      text-align: left;
+      flex-wrap: wrap;
     }
     .footer-title {
       font-family: "Playfair Display", serif;
       font-size: 32px;
       margin-bottom: 14px;
+      text-align: left;
     }
     .footer-col h3 {
       font-weight: 600;
@@ -162,9 +202,8 @@
       color: #fff;
       text-decoration: none;
     }
-    .footer-col a:hover {
-      text-decoration: underline;
-    }
+    .footer-col a:hover { text-decoration: underline; }
+
     .newsletter input[type="email"] {
       width: 160px;
       padding: 6px 8px;
@@ -175,39 +214,37 @@
     .newsletter button {
       padding: 6px 15px;
       border: none;
-      background: #213d33;
+      background: #234034;
       color: #fff;
       border-radius: 3px;
       cursor: pointer;
     }
-    .icons {
+
+    .socials {
       margin-top: 14px;
       display: flex;
-      gap: 12px;
-      font-size: 18px;
+      gap: 14px;
+      font-size: 20px;
     }
+    .socials a {
+      color: #fff;
+    }
+
     .footer-bottom {
       position: relative;
       text-align: center;
       padding: 15px 0 25px;
       font-size: 14px;
     }
-    
+
+    /* desktop width cap for main sections, footer stays centered */
     @media (min-width: 1300px) {
       .hero-img,
-      .top-nav,
       .intro,
-      .feature-row,
-      .footer {
+      .feature-row {
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
-      }
-      body {
-        background: #fff;
-      }
-      .footer {
-        max-width: 100%;
       }
     }
   </style>
@@ -216,19 +253,28 @@
 
   <!-- NAV -->
   <header class="top-nav">
-    <div class="logo">District Guide</div>
-    <nav class="nav-links">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Sights</a>
-      <a href="#">24 Hours</a>
-      <a href="#">Contact</a>
-    </nav>
+    <div class="left-nav">
+      <button class="menu-btn">Menu</button>
+      <div class="logo">District Guide</div>
+    </div>
+    <div class="right-nav">
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Sights</a>
+        <a href="#">24 Hours</a>
+        <a href="#">Contact</a>
+      </nav>
+      <button class="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        Search
+      </button>
+    </div>
   </header>
 
   <!-- HERO IMAGE -->
   <div class="hero-img">
-    <img src="img/hero-dc.jpeg" alt="Washington DC">
+    <img src="hero-dc.jpg" alt="Washington DC">
   </div>
 
   <!-- INTRO -->
@@ -241,24 +287,25 @@
     </div>
   </section>
 
-  <!-- FEATURE ROW -->
+  <!-- FEATURE ROW (clickable) -->
   <section class="feature-row">
-    <div class="feature-card">Top Sights</div>
-    <div class="feature-card">Plan Your Day</div>
-    <div class="feature-card">About DC</div>
+    <a href="#" class="feature-card">Top Sights</a>
+    <a href="#" class="feature-card">Plan Your Day</a>
+    <a href="#" class="feature-card">About DC</a>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-bg"></div>
+    <div class="footer-overlay"></div>
     <div class="footer-content">
       <div>
         <div class="footer-title">District Guide</div>
-        <div class="icons">
-          <span>📷</span>
-          <span>🐦</span>
-          <span>📱</span>
-          <span>✉️</span>
+        <div class="socials">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-regular fa-envelope"></i></a>
         </div>
       </div>
 
