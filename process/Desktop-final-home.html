@@ -13,163 +13,8 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-  <style>
-    :root {
-      --green: #2f5f4a;
-      --text: #0b0b0b;
-    }
-    * {box-sizing:border-box;margin:0;padding:0;}
-    body {
-      font-family:"Inder",sans-serif;
-      color:var(--text);
-      background:#fff;
-    }
-
-    /* NAVBAR */
-    .top-nav {
-      width:100%;
-      padding:18px 50px 14px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      background:#fff;
-      gap:20px;
-      position:relative;
-      z-index:30;
-    }
-    .left-nav {display:flex;align-items:center;gap:18px;}
-    .menu-btn{
-      border:1px solid #ddd;
-      background:#fff;
-      padding:6px 14px;
-      border-radius:999px;
-      cursor:pointer;
-      font-size:14px;
-    }
-    .logo{
-      font-family:"DM Serif Display",serif;
-      font-size:30px;
-    }
-    .right-nav{display:flex;align-items:center;gap:24px;}
-    .nav-links{display:flex;gap:24px;font-size:16px;}
-    .nav-links a{text-decoration:none;color:#000;}
-    .nav-links a:hover{text-decoration:underline;}
-
-    /* Search toggle */
-    .search-area{
-      position:relative;
-      display:flex;
-      align-items:center;
-    }
-    .search-btn{
-      background:#fff;
-      border:1px solid #ddd;
-      border-radius:999px;
-      padding:6px 12px;
-      display:flex;
-      align-items:center;
-      gap:6px;
-      cursor:pointer;
-      font-size:14px;
-    }
-    .search-input{
-      position:absolute;
-      right:0;
-      top:110%;
-      background:#fff;
-      border:1px solid #ccc;
-      padding:6px 8px;
-      border-radius:6px;
-      width:180px;
-      display:none;
-      font-family:"Inder",sans-serif;
-    }
-    .search-input.active{display:block;}
-
-    /* SIDE MENU */
-    .side-menu{
-      position:fixed;top:0;left:-240px;width:240px;height:100vh;
-      background:#fff;border-right:1px solid #ddd;
-      padding:20px;display:flex;flex-direction:column;gap:18px;
-      transition:left .25s ease;z-index:100;
-    }
-    .side-menu.active{left:0;}
-    .side-menu h2{font-family:"DM Serif Display",serif;margin-bottom:10px;}
-    .side-menu a{text-decoration:none;color:#000;}
-    .close-btn{
-      background:none;border:none;font-size:18px;align-self:flex-end;cursor:pointer;
-    }
-
-    /* HERO IMAGE full width */
-    .hero-img{
-      width:100vw;
-      position:relative;
-      left:50%;
-      right:50%;
-      margin-left:-50vw;
-      margin-right:-50vw;
-      height:320px;
-      overflow:hidden;
-    }
-    .hero-img img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    /* INTRO */
-    .intro{text-align:center;padding:50px 20px 30px;}
-    .intro h1{font-family:"DM Serif Display",serif;font-size:40px;margin-bottom:10px;}
-    .intro p{max-width:480px;margin:0 auto;line-height:1.4;color:#333;}
-    .intro-buttons{margin-top:30px;display:flex;justify-content:center;gap:20px;}
-    .btn{
-      background:var(--green);color:#fff;border:none;
-      padding:10px 30px;border-radius:8px;font-size:14px;cursor:pointer;
-    }
-    .btn:hover{opacity:.9;}
-
-    /* FEATURE CARDS */
-    .feature-row{display:flex;gap:40px;justify-content:center;padding:40px 50px 70px;}
-    .feature-card{
-      background:var(--green);width:230px;height:110px;
-      display:flex;align-items:center;justify-content:center;
-      color:#fff;font-family:"DM Serif Display",serif;font-size:22px;
-      text-decoration:none;transition:transform .15s ease;
-    }
-    .feature-card:hover{transform:translateY(-3px);opacity:.95;}
-
-    /* FOOTER */
-    .footer{position:relative;margin-top:30px;color:#fff;overflow:hidden;}
-    .footer-bg{
-      position:absolute;inset:0;
-      background:url("img/footer-bg.jpg") center/cover no-repeat;
-    }
-    .footer-overlay{
-      position:absolute;inset:0;background:rgba(47,95,74,.62);
-    }
-    .footer-inner{
-      position:relative;max-width:1100px;margin:0 auto;
-      padding:45px 40px 25px;text-align:center;
-    }
-    .footer-title{
-      font-family:"DM Serif Display",serif;font-size:32px;margin-bottom:30px;
-    }
-    .footer-content{
-      display:flex;justify-content:center;gap:80px;flex-wrap:wrap;text-align:left;
-    }
-    .footer-col h3{font-weight:600;margin-bottom:10px;}
-    .footer-col ul{list-style:none;}
-    .footer-col li{margin-bottom:6px;}
-    .footer-col a{color:#fff;text-decoration:none;}
-    .footer-col a:hover{text-decoration:underline;}
-    .newsletter input[type=email]{width:160px;padding:6px 8px;border:none;border-radius:3px;margin-bottom:8px;}
-    .newsletter button{padding:6px 15px;border:none;background:#234034;color:#fff;border-radius:3px;cursor:pointer;}
-    .contact-socials{margin-top:12px;display:flex;gap:12px;font-size:18px;}
-    .contact-socials a{color:#fff;}
-    .footer-bottom{text-align:center;padding:15px 0 5px;font-size:14px;}
-
-  </style>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -199,7 +44,9 @@
       </nav>
 
       <div class="search-area">
-        <button class="search-btn" id="searchToggle"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+        <button class="search-btn" id="searchToggle">
+          <i class="fa-solid fa-magnifying-glass"></i> Search
+        </button>
         <form id="searchForm">
           <input type="text" class="search-input" id="searchInput" placeholder="Search...">
         </form>
@@ -265,30 +112,33 @@
           <button>Subscribe</button>
         </div>
       </div>
-      <div class="footer-bottom">© 2024 District Guide. All rights reserves.</div>
+      <div class="footer-bottom">
+        © 2024 District Guide. All rights reserved.
+      </div>
     </div>
   </footer>
 
+  <!-- JavaScript -->
   <script>
-    // Side menu open/close
-    const openBtn=document.getElementById('openMenu');
-    const closeBtn=document.getElementById('closeMenu');
-    const sideMenu=document.getElementById('sideMenu');
-    openBtn.addEventListener('click',()=>sideMenu.classList.add('active'));
-    closeBtn.addEventListener('click',()=>sideMenu.classList.remove('active'));
+    // Side menu
+    const openBtn = document.getElementById('openMenu');
+    const closeBtn = document.getElementById('closeMenu');
+    const sideMenu = document.getElementById('sideMenu');
+    openBtn.addEventListener('click', () => sideMenu.classList.add('active'));
+    closeBtn.addEventListener('click', () => sideMenu.classList.remove('active'));
 
-    // Search toggle + fake search
-    const searchToggle=document.getElementById('searchToggle');
-    const searchInput=document.getElementById('searchInput');
-    const searchForm=document.getElementById('searchForm');
-    searchToggle.addEventListener('click',()=>{
+    // Search toggle
+    const searchToggle = document.getElementById('searchToggle');
+    const searchInput = document.getElementById('searchInput');
+    const searchForm = document.getElementById('searchForm');
+    searchToggle.addEventListener('click', () => {
       searchInput.classList.toggle('active');
-      if(searchInput.classList.contains('active')) searchInput.focus();
+      if (searchInput.classList.contains('active')) searchInput.focus();
     });
-    searchForm.addEventListener('submit',e=>{
+    searchForm.addEventListener('submit', e => {
       e.preventDefault();
-      const query=searchInput.value.trim();
-      if(query) alert("You searched for: "+query);
+      const query = searchInput.value.trim();
+      if (query) alert("You searched for: " + query);
     });
   </script>
 </body>
