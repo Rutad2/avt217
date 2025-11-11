@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inder&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome (for footer icons + search icon) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <!-- External CSS -->
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <!-- off-canvas menu -->
+  <!-- slide-out menu -->
   <aside class="side-menu" id="sideMenu">
     <button class="close-menu" id="closeMenu">&times;</button>
     <h2>Menu</h2>
@@ -34,29 +34,32 @@
       <h1 class="site-title">District Guide</h1>
     </div>
 
-    <nav class="site-nav">
-      <a href="Desktop-final-home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="sights.html">Sights</a>
-      <a href="hours.html">24 Hours</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <!-- wrap nav + search together so they're on the right -->
+    <div class="right-header">
+      <nav class="site-nav">
+        <a href="Desktop-final-home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="sights.html">Sights</a>
+        <a href="hours.html">24 Hours</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-    <div class="search-box">
-      <button class="search-toggle" id="searchToggle">
-        <i class="fa-solid fa-magnifying-glass"></i> Search
-      </button>
-      <form class="search-form" id="searchForm">
-        <input type="search" id="searchInput" placeholder="Search...">
-      </form>
+      <div class="search-box">
+        <button class="search-toggle" id="searchToggle">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Search
+        </button>
+        <form class="search-form" id="searchForm">
+          <input type="search" id="searchInput" placeholder="Search...">
+        </form>
+      </div>
     </div>
   </header>
 
   <main>
     <!-- hero -->
     <section class="hero">
-      <!-- shows more of the image vertically but still page width -->
-      <img src="img/hero-dc.jpeg" alt="Washington, DC view from above">
+      <img src="img/hero-dc.jpeg" alt="Washington, DC aerial view">
     </section>
 
     <!-- intro -->
@@ -69,7 +72,7 @@
       </div>
     </section>
 
-    <!-- three clickable cards -->
+    <!-- three links -->
     <section class="feature-links">
       <a href="sights.html" class="feature-card">Top Sights</a>
       <a href="hours.html" class="feature-card">Plan Your Day</a>
@@ -119,9 +122,8 @@
     </div>
   </footer>
 
-  <!-- small JS just to open/close menu and show search -->
   <script>
-    // menu
+    // open/close side menu
     const openMenu = document.getElementById('openMenu');
     const closeMenu = document.getElementById('closeMenu');
     const sideMenu = document.getElementById('sideMenu');
@@ -146,11 +148,11 @@
       }
     });
 
-    searchForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const value = searchInput.value.trim();
-      if (value) {
-        alert("You searched for: " + value);
+    searchForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const term = searchInput.value.trim();
+      if (term) {
+        alert("You searched for: " + term);
       }
     });
   </script>
