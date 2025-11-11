@@ -143,8 +143,8 @@ body {
 
 .hero img {
   width: 100%;
-  height: 420px;           /* shows more of the image vertically */
-  object-fit: cover;       /* keeps it edge-to-edge */
+  height: 420px;         
+  object-fit: cover;      
   object-position: center 45%;
   display: block;
 }
