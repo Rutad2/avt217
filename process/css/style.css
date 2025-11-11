@@ -171,14 +171,15 @@ body {
   color: #333;
 }
 
+/* ---------- INTRO VIDEO ---------- */
 
-.intro-gif {
+.intro-video {
   display: flex;
   justify-content: center;
   margin-top: 30px;
 }
 
-.intro-gif img {
+.intro-video video {
   width: 500px;
   max-width: 90%;
   border-radius: 8px;
@@ -222,6 +223,7 @@ body {
   background-image: linear-gradient(var(--footer-overlay), var(--footer-overlay)), url("../img/footer-hero.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   color: #fff;
   margin-top: 30px;
 }
@@ -268,7 +270,7 @@ body {
   text-decoration: underline;
 }
 
-
+/* Newsletter stacked with new color */
 .newsletter-form {
   display: flex;
   flex-direction: column;
@@ -286,7 +288,7 @@ body {
 .newsletter-form button {
   padding: 6px 15px;
   border: none;
-  background: #B07A5A; 
+  background: #B07A5A; /* new color */
   color: #fff;
   border-radius: 3px;
   cursor: pointer;
