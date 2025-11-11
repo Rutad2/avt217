@@ -219,7 +219,7 @@ body {
 /* ---------- FOOTER ---------- */
 
 .site-footer {
-  background-image: linear-gradient(var(--footer-overlay), var(--footer-overlay)), url("../img/footer-bg.jpg");
+  background-image: linear-gradient(var(--footer-overlay), var(--footer-overlay)), url("../img/footer-hero.jpg");
   background-size: cover;
   background-position: center;
   color: #fff;
