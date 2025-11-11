@@ -180,12 +180,13 @@ body {
 }
 
 .intro-video video {
-  width: 500px;
-  max-width: 90%;
+  width: 300px;   
+  max-width: 80%;
   border-radius: 8px;
   opacity: 0;
   animation: fadeIn 1.5s ease forwards;
 }
+
 
 @keyframes fadeIn {
   to { opacity: 1; }
