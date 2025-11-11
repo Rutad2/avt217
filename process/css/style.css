@@ -1,6 +1,8 @@
 :root {
   --green: #2f5f4a;
   --text: #0b0b0b;
+  --bg: #ffffff;
+  --footer-overlay: rgba(47, 95, 74, 0.62);
 }
 
 * {
@@ -11,30 +13,28 @@
 
 body {
   font-family: "Inder", sans-serif;
-  background: #fff;
+  background: var(--bg);
   color: var(--text);
 }
 
-/* NAVBAR */
-.top-nav {
-  width: 100%;
-  padding: 18px 50px 14px;
+/* ---------- HEADER ---------- */
+
+.site-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px 14px;
   background: #fff;
-  gap: 20px;
-  position: relative;
-  z-index: 30;
+  gap: 1.5rem;
 }
 
-.left-nav {
+.left-header {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 1rem;
 }
 
-.menu-btn {
+.menu-button {
   border: 1px solid #ddd;
   background: #fff;
   padding: 6px 14px;
@@ -43,92 +43,83 @@ body {
   font-size: 14px;
 }
 
-.logo {
+.site-title {
   font-family: "DM Serif Display", serif;
   font-size: 30px;
 }
 
-.right-nav {
+.site-nav {
   display: flex;
-  align-items: center;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
-.nav-links {
-  display: flex;
-  gap: 24px;
-  font-size: 16px;
-}
-
-.nav-links a {
+.site-nav a {
   text-decoration: none;
   color: #000;
 }
 
-.nav-links a:hover {
+.site-nav a:hover {
   text-decoration: underline;
 }
 
-/* SEARCH */
-.search-area {
+.search-box {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
-.search-btn {
+.search-toggle {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 999px;
   padding: 6px 12px;
   display: flex;
-  align-items: center;
   gap: 6px;
+  align-items: center;
   cursor: pointer;
-  font-size: 14px;
 }
 
-.search-input {
+.search-form {
+  display: none;
   position: absolute;
   right: 0;
-  top: 110%;
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 6px 8px;
-  border-radius: 6px;
-  width: 180px;
-  display: none;
-  font-family: "Inder", sans-serif;
+  top: 115%;
 }
 
-.search-input.active {
+.search-form.show-search {
   display: block;
 }
 
-/* SIDE MENU */
+.search-form input {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 170px;
+}
+
+/* ---------- SIDE MENU ---------- */
+
 .side-menu {
   position: fixed;
   top: 0;
   left: -240px;
   width: 240px;
   height: 100vh;
-  background: #ffffff;
+  background: #fff;
   border-right: 1px solid #ddd;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 16px;
   transition: left 0.25s ease;
-  z-index: 100;
+  z-index: 50;
 }
 
-.side-menu.active {
+.side-menu.show {
   left: 0;
 }
 
 .side-menu h2 {
   font-family: "DM Serif Display", serif;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 .side-menu a {
@@ -136,41 +127,36 @@ body {
   color: #000;
 }
 
-.close-btn {
+.close-menu {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 20px;
   align-self: flex-end;
   cursor: pointer;
 }
 
-/* HERO IMAGE – show more of the photo */
-.hero-img {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  height: 420px; /* taller to reveal more of the image */
-  overflow: hidden;
+/* ---------- HERO ---------- */
+
+.hero {
+  width: 100%;
 }
 
-.hero-img img {
+.hero img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 45%; /* slightly higher to show more top & bottom */
+  height: 420px;           /* shows more of the image vertically */
+  object-fit: cover;       /* keeps it edge-to-edge */
+  object-position: center 45%;
   display: block;
 }
 
-/* INTRO */
+/* ---------- INTRO ---------- */
+
 .intro {
   text-align: center;
   padding: 50px 20px 30px;
 }
 
-.intro h1 {
+.intro h2 {
   font-family: "DM Serif Display", serif;
   font-size: 40px;
   margin-bottom: 10px;
@@ -190,25 +176,24 @@ body {
   gap: 20px;
 }
 
-.btn {
+.button {
   background: var(--green);
   color: #fff;
-  border: none;
+  text-decoration: none;
   padding: 10px 30px;
   border-radius: 8px;
-  font-size: 14px;
-  cursor: pointer;
 }
 
-.btn:hover {
+.button:hover {
   opacity: 0.9;
 }
 
-/* FEATURE ROW */
-.feature-row {
+/* ---------- FEATURE CARDS ---------- */
+
+.feature-links {
   display: flex;
-  gap: 40px;
   justify-content: center;
+  gap: 40px;
   padding: 40px 50px 70px;
 }
 
@@ -223,36 +208,23 @@ body {
   font-family: "DM Serif Display", serif;
   font-size: 22px;
   text-decoration: none;
-  transition: transform 0.15s ease;
 }
 
 .feature-card:hover {
-  transform: translateY(-3px);
   opacity: 0.95;
 }
 
-/* FOOTER */
-.footer {
-  position: relative;
-  margin-top: 30px;
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+  background-image: linear-gradient(var(--footer-overlay), var(--footer-overlay)), url("../img/footer-bg.jpg");
+  background-size: cover;
+  background-position: center;
   color: #fff;
-  overflow: hidden;
-}
-
-.footer-bg {
-  position: absolute;
-  inset: 0;
-  background: url("../img/footer-bg.jpg") center/cover no-repeat;
-}
-
-.footer-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(47, 95, 74, 0.62);
+  margin-top: 30px;
 }
 
 .footer-inner {
-  position: relative;
   max-width: 1100px;
   margin: 0 auto;
   padding: 45px 40px 25px;
@@ -265,7 +237,7 @@ body {
   margin-bottom: 30px;
 }
 
-.footer-content {
+.footer-columns {
   display: flex;
   justify-content: center;
   gap: 80px;
@@ -274,7 +246,6 @@ body {
 }
 
 .footer-col h3 {
-  font-weight: 600;
   margin-bottom: 10px;
 }
 
@@ -295,15 +266,14 @@ body {
   text-decoration: underline;
 }
 
-.newsletter input[type="email"] {
-  width: 160px;
+.footer-col form input[type="email"] {
   padding: 6px 8px;
   border: none;
   border-radius: 3px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
-.newsletter button {
+.footer-col form button {
   padding: 6px 15px;
   border: none;
   background: #234034;
@@ -312,19 +282,17 @@ body {
   cursor: pointer;
 }
 
-.contact-socials {
-  margin-top: 12px;
+.footer-icons {
   display: flex;
   gap: 12px;
-  font-size: 18px;
+  margin-top: 10px;
 }
 
-.contact-socials a {
+.footer-icons a {
   color: #fff;
 }
 
-.footer-bottom {
-  text-align: center;
-  padding: 15px 0 5px;
+.footer-copy {
+  margin-top: 20px;
   font-size: 14px;
 }
