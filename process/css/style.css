@@ -23,10 +23,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 50px 14px;
+  padding: 18px 80px 14px;   
   background: #fff;
-  gap: 1.5rem;
 }
+
 
 .left-header {
   display: flex;
@@ -49,9 +49,11 @@ body {
 }
 
 .site-nav {
+  margin-left: auto;      
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;            
 }
+
 
 .site-nav a {
   text-decoration: none;
