@@ -451,3 +451,83 @@ body {
   .footer-copy { font-size: 12px; }
 }
 
+/* ---------- ABOUT PAGE ---------- */
+
+.about-main {
+  padding-bottom: 60px;
+}
+
+/* title at top */
+.about-title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.about-title h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 36px;
+}
+
+/* narrower hero image on About page */
+.about-hero img {
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  margin: 24px auto 0;
+  height: auto;
+}
+
+/* main content box under hero */
+.about-content {
+  max-width: 900px;
+  margin: 30px auto 60px;
+  padding: 0 40px 0;
+}
+
+/* history text */
+.about-text h3 {
+  text-align: center;
+  font-family: "DM Serif Display", serif;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.about-text p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+/* section headings (Best times / Getting to DC) */
+.about-section {
+  margin-top: 28px;
+}
+
+.about-section h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+/* boxes of options */
+.about-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.about-card {
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 22px;
+  min-width: 170px;
+  text-align: center;
+  font-size: 14px;
+  font-family: "DM Serif Display", serif;
+}
+
+.about-card:hover {
+  opacity: 0.93;
+}
+
