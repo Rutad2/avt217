@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About Washington, DC | District Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inder&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- side menu -->
+  <aside class="side-menu" id="sideMenu">
+    <button class="close-menu" id="closeMenu">&times;</button>
+    <h2>Menu</h2>
+    <a href="./Desktop-final-home.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="sights.html">Sights</a>
+    <a href="hours.html">24 Hours</a>
+  </aside>
+
+  <header class="site-header">
+    <div class="left-header">
+      <button class="menu-button" id="openMenu">Menu</button>
+      <h1 class="site-title">District Guide</h1>
+    </div>
+
+    <div class="right-header">
+      <nav class="site-nav">
+        <a href="./Desktop-final-home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="sights.html">Sights</a>
+        <a href="hours.html">24 Hours</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="search-box">
+        <button class="search-toggle" id="searchToggle">
+          <i class="fa-solid fa-magnifying-glass"></i> Search
+        </button>
+        <form class="search-form" id="searchForm">
+          <input type="search" id="searchInput" placeholder="Search...">
+        </form>
+      </div>
+    </div>
+  </header>
+
+  <main class="about-main">
+
+    <!-- page title -->
+    <section class="about-title">
+      <h2>About Washington, DC</h2>
+    </section>
+
+    <!-- hero image (narrower than full width) -->
+    <section class="about-hero">
+      <img src="img/footer-hero.jpg" alt="View of Washington, DC">
+    </section>
+
+    <!-- history text -->
+    <section class="about-content">
+      <article class="about-text">
+        <h3>Brief history of DC</h3>
+
+        <p>
+          George Washington selected the site for Washington, DC, in 1791, combining land from
+          Maryland and Virginia to establish the national capital.
+        </p>
+
+        <p>
+          The city was named after Washington, and the District of Columbia was named for
+          Christopher Columbus.
+        </p>
+
+        <p>
+          The district is not a state, and has no voting representation in Congress.
+          Congress established the local government that has been modified over time.
+        </p>
+      </article>
+
+      <!-- best times to visit -->
+      <section class="about-section">
+        <h3>Best Times to Visit</h3>
+        <div class="about-grid">
+          <a href="#" class="about-card">Spring –<br>Cherry Blossoms</a>
+          <a href="#" class="about-card">Summer –<br>Museums</a>
+          <a href="#" class="about-card">Fall –<br>Markets</a>
+        </div>
+      </section>
+
+      <!-- getting to DC -->
+      <section class="about-section">
+        <h3>Getting to DC</h3>
+        <div class="about-grid">
+          <a href="#" class="about-card">Metro map</a>
+          <a href="#" class="about-card">Train</a>
+          <a href="#" class="about-card">Metro,<br>Bus, Bike Share</a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- same footer as home -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h2 class="footer-title">District Guide</h2>
+
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h3>About</h3>
+          <ul>
+            <li><a href="about.html">Our Mission</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="faqs.html">FAQs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <ul>
+            <li>info@districtguide.com</li>
+            <li>(123) 456-7890</li>
+          </ul>
+          <div class="footer-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="mailto:info@districtguide.com"><i class="fa-regular fa-envelope"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Newsletter</h3>
+          <p>Stay up to date</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Email address">
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <p class="footer-copy">© 2024 District Guide. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- same JS as home for menu + search -->
+  <script>
+    // menu
+    const openMenu = document.getElementById('openMenu');
+    const closeMenu = document.getElementById('closeMenu');
+    const sideMenu = document.getElementById('sideMenu');
+
+    openMenu.addEventListener('click', function () {
+      sideMenu.classList.add('show');
+    });
+
+    closeMenu.addEventListener('click', function () {
+      sideMenu.classList.remove('show');
+    });
+
+    // search
+    const searchToggle = document.getElementById('searchToggle');
+    const searchForm = document.getElementById('searchForm');
+    const searchInput = document.getElementById('searchInput');
+
+    searchToggle.addEventListener('click', function () {
+      searchForm.classList.toggle('show-search');
+      if (searchForm.classList.contains('show-search')) {
+        searchInput.focus();
+      }
+    });
+
+    searchForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const term = searchInput.value.trim();
+      if (term) {
+        alert("You searched for: " + term);
+      }
+    });
+  </script>
+
+</body>
+</html>
