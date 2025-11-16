@@ -454,65 +454,66 @@ body {
 /* ---------- ABOUT PAGE ---------- */
 
 .about-main {
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
-/* title at top */
+/* Title */
 .about-title {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .about-title h2 {
   font-family: "DM Serif Display", serif;
-  font-size: 36px;
+  font-size: 40px;             
 }
 
-/* narrower hero image on About page */
+/* HERO IMAGE */
 .about-hero img {
   display: block;
-  width: 80%;
-  max-width: 900px;
-  margin: 24px auto 0;
+  width: 100%;               
+  max-width: 1100px;           
+  margin: 30px auto 0;
   height: auto;
+  border-radius: 6px;       
 }
 
-/* main content box under hero */
+/* CONTENT AREA */
 .about-content {
-  max-width: 900px;
-  margin: 30px auto 60px;
-  padding: 0 40px 0;
+  max-width: 1100px;         
+  margin: 40px auto 0;
+  padding: 0 40px;
 }
 
-/* history text */
+/* SECTION HEADERS + TEXT */
 .about-text h3 {
   text-align: center;
   font-family: "DM Serif Display", serif;
-  font-size: 22px;
-  margin-bottom: 14px;
+  font-size: 24px;
+  margin-bottom: 16px;
 }
 
 .about-text p {
-  font-size: 14px;
-  line-height: 1.5;
-  margin-bottom: 10px;
+  font-size: 16px;              
+  line-height: 1.55;
+  margin-bottom: 14px;
 }
 
-/* section headings (Best times / Getting to DC) */
+/* SUBSECTIONS: Best Times / Getting to DC */
 .about-section {
-  margin-top: 28px;
+  margin-top: 40px;
 }
 
 .about-section h3 {
   font-family: "DM Serif Display", serif;
-  font-size: 18px;
-  margin-bottom: 12px;
+  font-size: 20px;
+  margin-bottom: 16px;
 }
 
-/* boxes of options */
+/* GRID OF GREEN BOXES */
 .about-grid {
   display: flex;
-  gap: 18px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
@@ -520,14 +521,13 @@ body {
   background: var(--green);
   color: #fff;
   text-decoration: none;
-  padding: 10px 22px;
-  min-width: 170px;
+  padding: 14px 26px;
+  min-width: 200px;             /* match Home sizing */
   text-align: center;
-  font-size: 14px;
+  font-size: 18px;
   font-family: "DM Serif Display", serif;
 }
 
 .about-card:hover {
   opacity: 0.93;
 }
-
