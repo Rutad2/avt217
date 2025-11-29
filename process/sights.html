@@ -18,7 +18,7 @@
 </head>
 <body>
 
-  <!-- side menu -->
+  <!-- SIDE MENU -->
   <aside class="side-menu" id="sideMenu">
     <button class="close-menu" id="closeMenu">&times;</button>
     <h2>Menu</h2>
@@ -28,7 +28,7 @@
     <a href="hours.html">24 Hours</a>
   </aside>
 
-  <!-- header -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="left-header">
       <button class="menu-button" id="openMenu">Menu</button>
@@ -55,112 +55,108 @@
     </div>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main class="sights-main">
 
-    <!-- Page title -->
-    <section class="sights-title">
-      <h2>Top Sights in Washington, DC</h2>
-    </section>
+    <h2 class="sights-title">Top Sights in Washington, DC</h2>
 
-    <!-- Layout: filters + grid -->
     <section class="sights-layout">
+      <!-- FILTER COLUMN -->
+      <aside class="sights-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="free">Free</button>
+        <button class="filter-btn" data-filter="museum">Museums</button>
+        <button class="filter-btn" data-filter="neighborhood">Neighborhoods</button>
+      </aside>
 
-      <!-- Filters -->
-      <nav class="sights-filters" aria-label="Filter sights">
-        <button type="button" class="sights-filter-btn active">All</button>
-        <button type="button" class="sights-filter-btn">Free</button>
-        <button type="button" class="sights-filter-btn">Museums</button>
-        <button type="button" class="sights-filter-btn">Neighborhoods</button>
-      </nav>
-
-      <!-- Cards grid -->
-      <section class="sights-grid" aria-label="Sights list">
+      <!-- CARDS GRID -->
+      <section class="sights-grid">
 
         <!-- Lincoln Memorial -->
-      <article class="sight-card">
-        <img src="img/linc.jpg" alt="Lincoln Memorial statue" class="sight-image">
-        <h3 class="sight-name">Lincoln<br>Memorial</h3>
-        <p class="sight-desc">
-          Iconic memorial honoring the 16th president.
-        </p>
-        <a href="#" class="sight-details-btn">Details</a>
-      </article>
-      
-      <!-- Washington Monument -->
-      <article class="sight-card">
-        <img src="img/washington-monument.jpg" alt="Washington Monument" class="sight-image">
-        <h3 class="sight-name">Washington<br>Monument</h3>
-        <p class="sight-desc">
-          The towering obelisk on the National Mall.
-        </p>
-        <a href="#" class="sight-details-btn">Details</a>
-      </article>
-      
-      <!-- U.S. Capitol -->
-      <article class="sight-card">
-        <img src="img/capital.jpg" alt="U.S. Capitol building" class="sight-image">
-        <h3 class="sight-name">U.S. Capitol</h3>
-        <p class="sight-desc">
-          Seat of the U.S. Congress and a symbol of democracy.
-        </p>
-        <a href="#" class="sight-details-btn">Details</a>
-      </article>
-      
-      <!-- Smithsonian Castle -->
-      <article class="sight-card">
-        <img src="img/Smithsonian Castle.jpg" alt="Smithsonian Castle" class="sight-image">
-        <h3 class="sight-name">Smithsonian<br>Castle</h3>
-        <p class="sight-desc">
-          Gateway to the Smithsonian museums on the Mall.
-        </p>
-        <a href="#" class="sight-details-btn">Details</a>
-      </article>
-      
-      <!-- MLK Memorial -->
-      <article class="sight-card">
-        <img src="img/Martin Luther King, Jr. Memorial.jpg" alt="Martin Luther King Jr. Memorial" class="sight-image">
-        <h3 class="sight-name">Martin Luther<br>King, Jr.<br>Memorial</h3>
-        <p class="sight-desc">
-          Tribute to the civil rights leader on the Tidal Basin.
-        </p>
-        <a href="#" class="sight-details-btn">Details</a>
-      </article>
-      
-      <!-- Georgetown Waterfront -->
-      <article class="sight-card">
-        <img src="img/Georgetown Waterfront.jpg" alt="Georgetown waterfront" class="sight-image">
-        <h3 class="sight-name">Georgetown<br>Waterfront</h3>
-        <p class="sight-desc">
-          Cobblestones, canal path, and riverside views.
-        </p>
-        <a href="#" class="sight-details-btn">Details</a>
-      </article>
-      
-      <!-- National Air and Space Museum -->
-      <article class="sight-card">
-        <img src="img/National Air and Space Museum.jpeg" alt="National Air and Space Museum" class="sight-image">
-        <h3 class="sight-name">National Air<br>and Space<br>Museum</h3>
-        <p class="sight-desc">
-          Apollo, Skylab, and iconic aircraft.
-        </p>
-        <a href="#" class="sight-details-btn">Details</a>
-      </article>
-      
-      <!-- National Gallery of Art (your last card) -->
-      <article class="sight-card">
-        <img src="img/National Gallery of Art.jpg" alt="National Gallery of Art" class="sight-image">
-        <h3 class="sight-name">National Gallery<br>of Art</h3>
-        <p class="sight-desc">
-          Masterworks + sculpture garden; always free.
-        </p>
-        <a href="#" class="sight-details-btn">Details</a>
-      </article>
+        <article class="sight-card" data-tags="free monument">
+          <img src="img/linc.jpg" alt="Lincoln Memorial statue" class="sight-image">
+          <h3 class="sight-name">Lincoln<br>Memorial</h3>
+          <p class="sight-desc">
+            Iconic memorial honoring the 16th president.
+          </p>
+          <button class="sight-details-btn">Details</button>
+        </article>
+
+        <!-- Washington Monument -->
+        <article class="sight-card" data-tags="free monument">
+          <img src="img/washington-monument.jpg" alt="Washington Monument" class="sight-image">
+          <h3 class="sight-name">Washington<br>Monument</h3>
+          <p class="sight-desc">
+            The towering obelisk on the National Mall.
+          </p>
+          <button class="sight-details-btn">Details</button>
+        </article>
+
+        <!-- U.S. Capitol -->
+        <article class="sight-card" data-tags="free neighborhood">
+          <img src="img/capital.jpg" alt="U.S. Capitol building" class="sight-image">
+          <h3 class="sight-name">U.S. Capitol</h3>
+          <p class="sight-desc">
+            Seat of the U.S. Congress and a symbol of democracy.
+          </p>
+          <button class="sight-details-btn">Details</button>
+        </article>
+
+        <!-- Smithsonian Castle -->
+        <article class="sight-card" data-tags="free museum">
+          <img src="img/Smithsonian Castle.jpg" alt="Smithsonian Castle" class="sight-image">
+          <h3 class="sight-name">Smithsonian<br>Castle</h3>
+          <p class="sight-desc">
+            Gateway to the Smithsonian museums on the Mall.
+          </p>
+          <button class="sight-details-btn">Details</button>
+        </article>
+
+        <!-- MLK Memorial -->
+        <article class="sight-card" data-tags="free monument neighborhood">
+          <img src="img/Martin Luther King, Jr. Memorial.jpg" alt="Martin Luther King Jr. Memorial" class="sight-image">
+          <h3 class="sight-name">Martin Luther<br>King, Jr.<br>Memorial</h3>
+          <p class="sight-desc">
+            Tribute to the civil rights leader on the Tidal Basin.
+          </p>
+          <button class="sight-details-btn">Details</button>
+        </article>
+
+        <!-- Georgetown Waterfront -->
+        <article class="sight-card" data-tags="neighborhood">
+          <img src="img/Georgetown Waterfront.jpg" alt="Georgetown waterfront" class="sight-image">
+          <h3 class="sight-name">Georgetown<br>Waterfront</h3>
+          <p class="sight-desc">
+            Cobblestones, canal path, and riverside views.
+          </p>
+          <button class="sight-details-btn">Details</button>
+        </article>
+
+        <!-- National Air and Space Museum -->
+        <article class="sight-card" data-tags="museum free">
+          <img src="img/National Air and Space Museum.jpeg" alt="National Air and Space Museum" class="sight-image">
+          <h3 class="sight-name">National Air<br>and Space<br>Museum</h3>
+          <p class="sight-desc">
+            Apollo, Skylab, and iconic aircraft.
+          </p>
+          <button class="sight-details-btn">Details</button>
+        </article>
+
+        <!-- National Gallery of Art -->
+        <article class="sight-card" data-tags="museum free">
+          <img src="img/National Gallery of Art.jpg" alt="National Gallery of Art" class="sight-image">
+          <h3 class="sight-name">National Gallery<br>of Art</h3>
+          <p class="sight-desc">
+            Masterworks + sculpture garden; always free.
+          </p>
+          <button class="sight-details-btn">Details</button>
+        </article>
 
       </section>
     </section>
   </main>
 
-  <!-- footer (same site footer for consistency) -->
+  <!-- FOOTER (same as other pages) -->
   <footer class="site-footer">
     <div class="footer-inner">
       <h2 class="footer-title">District Guide</h2>
@@ -204,32 +200,32 @@
   </footer>
 
   <script>
-    // side menu
+    /* ----- side menu ----- */
     const openMenu = document.getElementById('openMenu');
     const closeMenu = document.getElementById('closeMenu');
     const sideMenu = document.getElementById('sideMenu');
 
-    openMenu.addEventListener('click', function () {
+    openMenu.addEventListener('click', () => {
       sideMenu.classList.add('show');
     });
 
-    closeMenu.addEventListener('click', function () {
+    closeMenu.addEventListener('click', () => {
       sideMenu.classList.remove('show');
     });
 
-    // search
+    /* ----- search ----- */
     const searchToggle = document.getElementById('searchToggle');
     const searchForm = document.getElementById('searchForm');
     const searchInput = document.getElementById('searchInput');
 
-    searchToggle.addEventListener('click', function () {
+    searchToggle.addEventListener('click', () => {
       searchForm.classList.toggle('show-search');
       if (searchForm.classList.contains('show-search')) {
         searchInput.focus();
       }
     });
 
-    searchForm.addEventListener('submit', function (event) {
+    searchForm.addEventListener('submit', (event) => {
       event.preventDefault();
       const term = searchInput.value.trim();
       if (term) {
@@ -237,12 +233,27 @@
       }
     });
 
-    // filter buttons: just visual active state
-    const filterButtons = document.querySelectorAll('.sights-filter-btn');
+    /* ----- simple filter buttons ----- */
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const sightCards   = document.querySelectorAll('.sight-card');
+
     filterButtons.forEach(btn => {
       btn.addEventListener('click', () => {
+        const category = btn.dataset.filter; // all, free, museum, neighborhood
+
+        // update active button styling
         filterButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
+
+        // show/hide cards
+        sightCards.forEach(card => {
+          const tags = card.dataset.tags.split(' ');
+          if (category === 'all' || tags.includes(category)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
   </script>
