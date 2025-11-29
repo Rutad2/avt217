@@ -36,7 +36,7 @@
         <a href="./Desktop-final-home.html">District Guide</a>
       </h1>
     </div>
-
+  
     <div class="right-header">
       <nav class="site-nav">
         <a href="./Desktop-final-home.html">Home</a>
@@ -44,15 +44,6 @@
         <a href="sights.html">Sights</a>
         <a href="hours.html">24 Hours</a>
       </nav>
-
-      <div class="search-box">
-        <button class="search-toggle" id="searchToggle">
-          <i class="fa-solid fa-magnifying-glass"></i> Search
-        </button>
-        <form class="search-form" id="searchForm">
-          <input type="search" id="searchInput" placeholder="Search...">
-        </form>
-      </div>
     </div>
   </header>
 
@@ -317,38 +308,19 @@
   </footer>
 
   <script>
-    // side menu
-    const openMenu = document.getElementById('openMenu');
-    const closeMenu = document.getElementById('closeMenu');
-    const sideMenu = document.getElementById('sideMenu');
+  // side menu
+  const openMenu = document.getElementById('openMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  const sideMenu = document.getElementById('sideMenu');
+  
+  openMenu.addEventListener('click', () => {
+    sideMenu.classList.add('show');
+  });
+  
+  closeMenu.addEventListener('click', () => {
+    sideMenu.classList.remove('show');
+  });
 
-    openMenu.addEventListener('click', function () {
-      sideMenu.classList.add('show');
-    });
-
-    closeMenu.addEventListener('click', function () {
-      sideMenu.classList.remove('show');
-    });
-
-    // search
-    const searchToggle = document.getElementById('searchToggle');
-    const searchForm = document.getElementById('searchForm');
-    const searchInput = document.getElementById('searchInput');
-
-    searchToggle.addEventListener('click', function () {
-      searchForm.classList.toggle('show-search');
-      if (searchForm.classList.contains('show-search')) {
-        searchInput.focus();
-      }
-    });
-
-    searchForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const term = searchInput.value.trim();
-      if (term) {
-        alert("You searched for: " + term);
-      }
-    });
   </script>
 
 </body>
