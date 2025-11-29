@@ -180,7 +180,7 @@ body {
 }
 
 .intro-video video {
-  width: 300px;   
+  width: 300px;
   max-width: 80%;
   border-radius: 8px;
   opacity: 0;
@@ -287,7 +287,7 @@ body {
 .newsletter-form button {
   padding: 6px 15px;
   border: none;
-  background: #B07A5A; 
+  background: #B07A5A;
   color: #fff;
   border-radius: 3px;
   cursor: pointer;
@@ -328,10 +328,10 @@ body {
 /* Smaller rectangle hero image */
 .about-hero img {
   display: block;
-  width: 1000px;      
+  width: 1000px;
   max-width: 90%;
-  height: 300px;        
-  object-fit: cover;    
+  height: 300px;
+  object-fit: cover;
   object-position: center 25%;
   margin: 30px auto 0;
   border-radius: 6px;
@@ -339,7 +339,7 @@ body {
 
 /* Main content container */
 .about-content {
-  max-width: 1100px;    
+  max-width: 1100px;
   margin: 40px auto 0;
   padding: 0 40px;
 }
@@ -373,7 +373,7 @@ body {
 .about-grid {
   display: flex;
   justify-content: center;
-  gap: 40px;             
+  gap: 40px;
   flex-wrap: wrap;
   padding: 10px 0 0;
 }
@@ -383,7 +383,7 @@ body {
   background: var(--green);
   color: #fff;
   text-decoration: none;
-  width: 230px;        
+  width: 230px;
   height: 110px;
   display: flex;
   align-items: center;
@@ -397,6 +397,88 @@ body {
 
 .about-card:hover {
   opacity: 0.93;
+}
+
+/* ---------- 24 HOURS PAGE (DESKTOP) ---------- */
+
+.hours-main {
+  max-width: 1100px;
+  margin: 40px auto 70px;
+  padding: 0 40px;
+}
+
+/* Top row: title on left, button on right */
+.hours-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.hours-title h2 {
+  font-family: "DM Serif Display", serif;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.hours-jump-btn {
+  align-self: center;
+  background: var(--green);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 26px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: "Inder", sans-serif;
+}
+
+/* Timeline blocks */
+.hours-timeline {
+  border-top: 1px solid #d8d8d8;
+}
+
+.hours-block {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.hours-image img {
+  width: 210px;
+  height: 130px;
+  object-fit: cover;
+  display: block;
+}
+
+.hours-text h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.hours-text ul {
+  list-style: disc;
+  margin-left: 20px;
+  line-height: 1.45;
+  font-size: 15px;
+}
+
+/* Quick swaps section at bottom */
+.hours-swaps {
+  margin-top: 26px;
+}
+
+.hours-swaps h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.hours-swaps ul {
+  list-style: disc;
+  margin-left: 20px;
+  line-height: 1.45;
+  font-size: 15px;
 }
 
 /* =========================
@@ -417,7 +499,7 @@ body {
     padding: 0;
     border-radius: 8px;
     position: relative;
-    color: transparent;    
+    color: transparent;
   }
   .menu-button::before,
   .menu-button::after {
@@ -439,8 +521,8 @@ body {
   }
 
   /* hide the desktop nav; use side menu instead */
-  .site-nav { 
-    display: none; 
+  .site-nav {
+    display: none;
   }
 
   /* search: icon-only button on the right */
@@ -496,11 +578,11 @@ body {
     max-width: 460px;
     height: 52px;
     border-radius: 6px;
-    background: var(--green);   
-    color: #fff;           
+    background: var(--green);
+    color: #fff;
     font-size: 18px;
     font-family: "DM Serif Display", serif;
-    border: none;          
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -537,8 +619,8 @@ body {
     justify-content: center;
   }
 
-  .footer-copy { 
-    font-size: 12px; 
+  .footer-copy {
+    font-size: 12px;
   }
 
   /* ---------- ABOUT PAGE MOBILE ---------- */
@@ -559,11 +641,11 @@ body {
   .about-hero img {
     width: 100%;
     max-width: 100%;
-    height: 200px;               /* shorter for phone */
+    height: 200px;
     margin: 16px 0 0;
     border-radius: 0;
     object-fit: cover;
-    object-position: center 25%;  /* still show more of the top */
+    object-position: center 25%;
   }
 
   .about-content {
@@ -608,6 +690,51 @@ body {
     font-size: 16px;
     padding: 10px 12px;
     border-radius: 6px;
+  }
+
+  /* ---------- 24 HOURS MOBILE ---------- */
+
+  .hours-main {
+    margin: 24px auto 50px;
+    padding: 0 14px;
+  }
+
+  .hours-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hours-title h2 {
+    font-size: 24px;
+  }
+
+  .hours-jump-btn {
+    padding: 8px 18px;
+    font-size: 14px;
+  }
+
+  .hours-block {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hours-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hours-text h3 {
+    font-size: 16px;
+  }
+
+  .hours-text ul,
+  .hours-swaps ul {
+    font-size: 14px;
+  }
+
+  .hours-swaps {
+    margin-top: 20px;
   }
 }
 
@@ -675,3 +802,4 @@ button:focus-visible {
   outline: 2px solid #B07A5A;
   outline-offset: 2px;
 }
+
