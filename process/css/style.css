@@ -141,7 +141,7 @@ body {
   cursor: pointer;
 }
 
-/* ---------- HERO ---------- */
+/* ---------- HERO ---------- (home page) */
 
 .hero img {
   width: 100%;
@@ -151,7 +151,7 @@ body {
   display: block;
 }
 
-/* ---------- INTRO ---------- */
+/* ---------- INTRO (home) ---------- */
 
 .intro {
   text-align: center;
@@ -171,7 +171,7 @@ body {
   color: #333;
 }
 
-/* ---------- INTRO VIDEO ---------- */
+/* ---------- INTRO VIDEO (home) ---------- */
 
 .intro-video {
   display: flex;
@@ -191,7 +191,7 @@ body {
   to { opacity: 1; }
 }
 
-/* ---------- FEATURE CARDS ---------- */
+/* ---------- FEATURE CARDS (home) ---------- */
 
 .feature-links {
   display: flex;
@@ -220,7 +220,9 @@ body {
 /* ---------- FOOTER ---------- */
 
 .site-footer {
-  background-image: linear-gradient(var(--footer-overlay), var(--footer-overlay)), url("../img/footer-hero.jpg");
+  background-image:
+    linear-gradient(var(--footer-overlay), var(--footer-overlay)),
+    url("../img/footer-hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -407,7 +409,7 @@ body {
   padding: 0 40px;
 }
 
-/* Top row: title on left, button on right */
+/* Top row: title on left, jump links on right */
 .hours-header-row {
   display: flex;
   justify-content: space-between;
@@ -421,14 +423,28 @@ body {
   line-height: 1.2;
 }
 
+/* Jump-to-hour mini nav */
+.hours-jump-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  max-width: 420px;
+  justify-content: flex-end;
+  font-size: 14px;
+}
+
+.hours-jump-label {
+  margin-right: 4px;
+}
+
 .hours-jump-btn {
-  align-self: center;
   background: var(--green);
   color: #fff;
   text-decoration: none;
-  padding: 10px 26px;
-  border-radius: 4px;
-  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
   font-family: "Inder", sans-serif;
 }
 
@@ -501,10 +517,12 @@ body {
     position: relative;
     color: transparent;
   }
+
   .menu-button::before,
   .menu-button::after {
     content: "";
   }
+
   .menu-button::before {
     position: absolute;
     inset: 0;
@@ -530,15 +548,19 @@ body {
     margin-left: auto;
     gap: 10px;
   }
+
   .search-toggle {
     padding: 8px;
     width: 36px;
     height: 36px;
     border-radius: 18px;
     justify-content: center;
-    font-size: 0;           /* hide “Search” text */
+    font-size: 0; /* hide “Search” text */
   }
-  .search-toggle i { font-size: 16px; }
+
+  .search-toggle i {
+    font-size: 16px;
+  }
 
   /* search dropdown placement */
   .search-form {
@@ -553,12 +575,25 @@ body {
   }
 
   /* Intro text sizes */
-  .intro { padding: 24px 12px 26px; }
-  .intro h2 { font-size: 26px; margin-bottom: 6px; }
-  .intro p  { font-size: 14px; max-width: 90%; }
+  .intro {
+    padding: 24px 12px 26px;
+  }
 
-  /* Intro video (your mp4) */
-  .intro-video { margin-top: 16px; }
+  .intro h2 {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  .intro p {
+    font-size: 14px;
+    max-width: 90%;
+  }
+
+  /* Intro video */
+  .intro-video {
+    margin-top: 16px;
+  }
+
   .intro-video video {
     width: 260px;
     max-width: 92%;
@@ -592,17 +627,22 @@ body {
   .footer-inner {
     padding: 26px 14px 18px;
   }
+
   .footer-title {
     font-size: 22px;
     margin-bottom: 14px;
   }
+
   .footer-columns {
     flex-direction: column;
     align-items: center;
     gap: 16px;
     text-align: center;
   }
-  .footer-col h3 { margin-bottom: 6px; }
+
+  .footer-col h3 {
+    margin-bottom: 6px;
+  }
 
   /* Newsletter: inline input + button on mobile */
   .newsletter-form {
@@ -611,6 +651,7 @@ body {
     justify-content: center;
     gap: 8px;
   }
+
   .newsletter-form input[type="email"] {
     width: 180px;
   }
@@ -623,7 +664,7 @@ body {
     font-size: 12px;
   }
 
-  /* ---------- ABOUT PAGE MOBILE ---------- */
+  /* ABOUT PAGE MOBILE */
 
   .about-main {
     padding-bottom: 50px;
@@ -637,7 +678,6 @@ body {
     font-size: 26px;
   }
 
-  /* Make the image full-width + shorter on mobile */
   .about-hero img {
     width: 100%;
     max-width: 100%;
@@ -674,7 +714,6 @@ body {
     margin-bottom: 10px;
   }
 
-  /* stack the cards full-width like home mobile */
   .about-grid {
     flex-direction: column;
     align-items: stretch;
@@ -692,7 +731,7 @@ body {
     border-radius: 6px;
   }
 
-  /* ---------- 24 HOURS MOBILE ---------- */
+  /* 24 HOURS MOBILE */
 
   .hours-main {
     margin: 24px auto 50px;
@@ -709,9 +748,15 @@ body {
     font-size: 24px;
   }
 
+  .hours-jump-nav {
+    justify-content: flex-start;
+    max-width: 100%;
+    font-size: 13px;
+  }
+
   .hours-jump-btn {
-    padding: 8px 18px;
-    font-size: 14px;
+    padding: 4px 10px;
+    font-size: 12px;
   }
 
   .hours-block {
@@ -775,13 +820,18 @@ body {
 /* Buttons + search hover feedback */
 .menu-button,
 .search-toggle,
-.newsletter-form button {
-  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+.newsletter-form button,
+.hours-jump-btn {
+  transition: background-color 0.15s ease,
+              transform 0.15s ease,
+              box-shadow 0.15s ease,
+              opacity 0.15s ease;
 }
 
 .menu-button:hover,
 .search-toggle:hover,
-.newsletter-form button:hover {
+.newsletter-form button:hover,
+.hours-jump-btn:hover {
   transform: translateY(-1px);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
@@ -802,4 +852,3 @@ button:focus-visible {
   outline: 2px solid #B07A5A;
   outline-offset: 2px;
 }
-
