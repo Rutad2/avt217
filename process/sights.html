@@ -29,32 +29,24 @@
   </aside>
 
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="left-header">
-      <button class="menu-button" id="openMenu">Menu</button>
-      <h1 class="site-title">
-        <a href="./Desktop-final-home.html">District Guide</a>
-      </h1>
-    </div>
+<header class="site-header">
+  <div class="left-header">
+    <button class="menu-button" id="openMenu">Menu</button>
+    <h1 class="site-title">
+      <a href="./Desktop-final-home.html">District Guide</a>
+    </h1>
+  </div>
 
-    <div class="right-header">
-      <nav class="site-nav">
-        <a href="./Desktop-final-home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="sights.html">Sights</a>
-        <a href="hours.html">24 Hours</a>
-      </nav>
+  <div class="right-header">
+    <nav class="site-nav">
+      <a href="./Desktop-final-home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="sights.html">Sights</a>
+      <a href="hours.html">24 Hours</a>
+    </nav>
+  </div>
+</header>
 
-      <div class="search-box">
-        <button class="search-toggle" id="searchToggle">
-          <i class="fa-solid fa-magnifying-glass"></i> Search
-        </button>
-        <form class="search-form" id="searchForm">
-          <input type="search" id="searchInput" placeholder="Search...">
-        </form>
-      </div>
-    </div>
-  </header>
 
   <!-- MAIN CONTENT -->
 <main class="sights-main">
@@ -233,8 +225,8 @@
     </div>
   </footer>
 
-  <script>
-    /* ----- side menu ----- */
+<script>
+    // side menu
     const openMenu = document.getElementById('openMenu');
     const closeMenu = document.getElementById('closeMenu');
     const sideMenu = document.getElementById('sideMenu');
@@ -246,51 +238,6 @@
     closeMenu.addEventListener('click', () => {
       sideMenu.classList.remove('show');
     });
-
-    /* ----- search ----- */
-    const searchToggle = document.getElementById('searchToggle');
-    const searchForm = document.getElementById('searchForm');
-    const searchInput = document.getElementById('searchInput');
-
-    searchToggle.addEventListener('click', () => {
-      searchForm.classList.toggle('show-search');
-      if (searchForm.classList.contains('show-search')) {
-        searchInput.focus();
-      }
-    });
-
-    searchForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const term = searchInput.value.trim();
-      if (term) {
-        alert("You searched for: " + term);
-      }
-    });
-
-    /* ----- simple filter buttons ----- */
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const sightCards   = document.querySelectorAll('.sight-card');
-
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const category = btn.dataset.filter; // all, free, museum, neighborhood
-
-        // update active button styling
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        // show/hide cards
-        sightCards.forEach(card => {
-          const tags = card.dataset.tags.split(' ');
-          if (category === 'all' || tags.includes(category)) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
   </script>
-
 </body>
 </html>
