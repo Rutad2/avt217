@@ -57,14 +57,28 @@
 
   <main class="hours-main">
 
-    <!-- Title row -->
+    <!-- Title + jump links row -->
     <section class="hours-header-row">
       <div class="hours-title">
         <h2>24 Hours in<br>Washington, D.C</h2>
       </div>
-      <button type="button" class="hours-jump-btn" id="jumpHourBtn">
-        Jump to Hour
-      </button>
+
+      <!-- Jump-to-hour mini nav -->
+      <nav class="hours-jump-nav">
+        <span class="hours-jump-label">Jump to:</span>
+        <a href="#hour-7am"   class="hours-jump-btn">7am</a>
+        <a href="#hour-9am"   class="hours-jump-btn">9am</a>
+        <a href="#hour-1030"  class="hours-jump-btn">10:30am</a>
+        <a href="#hour-11am"  class="hours-jump-btn">11am</a>
+        <a href="#hour-1230"  class="hours-jump-btn">12:30pm</a>
+        <a href="#hour-2pm"   class="hours-jump-btn">2pm</a>
+        <a href="#hour-3pm"   class="hours-jump-btn">3pm</a>
+        <a href="#hour-530pm" class="hours-jump-btn">5:30pm</a>
+        <a href="#hour-630pm" class="hours-jump-btn">6:30pm</a>
+        <a href="#hour-8pm"   class="hours-jump-btn">8pm</a>
+        <a href="#hour-930pm" class="hours-jump-btn">9:30pm</a>
+        <a href="#hour-10pm"  class="hours-jump-btn">10pm</a>
+      </nav>
     </section>
 
     <!-- Day plan timeline -->
@@ -334,51 +348,7 @@
         alert("You searched for: " + term);
       }
     });
-
-    // Jump to Hour button
-    const jumpHourBtn = document.getElementById('jumpHourBtn');
-
-    if (jumpHourBtn) {
-      jumpHourBtn.addEventListener('click', function () {
-        const input = prompt(
-          "What time do you want to jump to?\n" +
-          "(Type one of: 7am, 9am, 10:30am, 11am, 12:30pm, 2pm, 3pm, 5:30pm, 6:30pm, 8pm, 9:30pm, 10pm)"
-        );
-
-        if (!input) return; // user hit cancel
-
-        const time = input.toLowerCase().trim();
-
-        // map allowed inputs to section IDs
-        const hourMap = {
-          "7am": "hour-7am",
-          "9am": "hour-9am",
-          "10:30am": "hour-1030",
-          "11am": "hour-11am",
-          "12:30pm": "hour-1230",
-          "2pm": "hour-2pm",
-          "3pm": "hour-3pm",
-          "5:30pm": "hour-530pm",
-          "6:30pm": "hour-630pm",
-          "8pm": "hour-8pm",
-          "9:30pm": "hour-930pm",
-          "10pm": "hour-10pm"
-        };
-
-        const targetId = hourMap[time];
-
-        if (targetId) {
-          const section = document.getElementById(targetId);
-          if (section) {
-            section.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        } else {
-          alert("Sorry, I don’t have that time on the schedule.");
-        }
-      });
-    }
   </script>
 
 </body>
 </html>
-
