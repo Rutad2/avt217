@@ -525,6 +525,13 @@ body {
 
 .sight-card {
   max-width: 230px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sight-card:hover,
+.sight-card:focus-within {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .sight-image {
