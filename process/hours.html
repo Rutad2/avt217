@@ -62,7 +62,9 @@
       <div class="hours-title">
         <h2>24 Hours in<br>Washington, D.C</h2>
       </div>
-      <a href="#hour-7am" class="hours-jump-btn">Jump to Hour</a>
+      <button type="button" class="hours-jump-btn" id="jumpHourBtn">
+        Jump to Hour
+      </button>
     </section>
 
     <!-- Day plan timeline -->
@@ -332,7 +334,51 @@
         alert("You searched for: " + term);
       }
     });
+
+    // Jump to Hour button
+    const jumpHourBtn = document.getElementById('jumpHourBtn');
+
+    if (jumpHourBtn) {
+      jumpHourBtn.addEventListener('click', function () {
+        const input = prompt(
+          "What time do you want to jump to?\n" +
+          "(Type one of: 7am, 9am, 10:30am, 11am, 12:30pm, 2pm, 3pm, 5:30pm, 6:30pm, 8pm, 9:30pm, 10pm)"
+        );
+
+        if (!input) return; // user hit cancel
+
+        const time = input.toLowerCase().trim();
+
+        // map allowed inputs to section IDs
+        const hourMap = {
+          "7am": "hour-7am",
+          "9am": "hour-9am",
+          "10:30am": "hour-1030",
+          "11am": "hour-11am",
+          "12:30pm": "hour-1230",
+          "2pm": "hour-2pm",
+          "3pm": "hour-3pm",
+          "5:30pm": "hour-530pm",
+          "6:30pm": "hour-630pm",
+          "8pm": "hour-8pm",
+          "9:30pm": "hour-930pm",
+          "10pm": "hour-10pm"
+        };
+
+        const targetId = hourMap[time];
+
+        if (targetId) {
+          const section = document.getElementById(targetId);
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        } else {
+          alert("Sorry, I don’t have that time on the schedule.");
+        }
+      });
+    }
   </script>
 
 </body>
 </html>
+
