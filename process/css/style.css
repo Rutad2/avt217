@@ -505,7 +505,7 @@ body {
   padding: 0 40px;
 }
 
-.sights-title h2 {
+.sights-title {
   font-family: "DM Serif Display", serif;
   font-size: 40px;
   margin-bottom: 30px;
@@ -513,90 +513,78 @@ body {
 
 .sights-layout {
   display: flex;
-  gap: 40px;
   align-items: flex-start;
+  gap: 60px;
 }
 
-/* Filters column */
-
+/* vertical filter buttons on the left */
 .sights-filters {
+  min-width: 150px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
-.sights-filter-btn {
-  width: 140px;
-  padding: 8px 12px;
+.filter-btn {
   background: var(--green);
   color: #fff;
   border: none;
+  padding: 10px 18px;
   text-align: left;
-  font-size: 16px;
+  width: 100%;
   font-family: "Inder", sans-serif;
+  font-size: 16px;
   cursor: pointer;
 }
 
-.sights-filter-btn.active {
-  background: #1e4131;
+.filter-btn.active {
+  background: #244539; /* slightly darker */
 }
 
-/* Grid of cards */
-
+/* 3-column grid of cards */
 .sights-grid {
   flex: 1;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 40px 40px;
+  gap: 60px 50px;
 }
 
 .sight-card {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  max-width: 220px;
 }
 
 .sight-image {
   width: 100%;
   height: 160px;
   object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 12px;
+  display: block;
+  margin-bottom: 14px;
 }
 
 .sight-name {
   font-family: "DM Serif Display", serif;
-  font-size: 22px;
-  line-height: 1.1;
+  font-size: 20px;
+  line-height: 1.2;
   margin-bottom: 6px;
 }
 
 .sight-desc {
   font-size: 14px;
   line-height: 1.4;
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 8px;
 }
-
-/* Details pill */
 
 .sight-details-btn {
+  display: inline-block;
   margin-top: 4px;
-  padding: 4px 12px;
+  padding: 4px 10px;
+  font-size: 13px;
   border-radius: 999px;
+  border: none;
   background: #B07A5A;
   color: #fff;
-  font-size: 12px;
   text-decoration: none;
-}
-
-/* Make card + button feel clickable */
-.sight-card {
-  cursor: default;
-}
-
-.sight-details-btn:hover {
-  opacity: 0.9;
+  cursor: pointer;
 }
 
 /* =========================
@@ -883,16 +871,17 @@ body {
   .hours-swaps {
     margin-top: 20px;
   }
-    /* SIGHTS PAGE MOBILE */
+  /* ---------- SIGHTS PAGE MOBILE ---------- */
 
   .sights-main {
+    max-width: 100%;
     margin: 24px auto 50px;
-    padding: 0 14px;
+    padding: 0 16px;
   }
 
-  .sights-title h2 {
+  .sights-title {
     font-size: 28px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
 
   .sights-layout {
@@ -902,32 +891,29 @@ body {
 
   .sights-filters {
     flex-direction: row;
-    flex-wrap: wrap;
-    gap: 6px;
+    min-width: 0;
+    gap: 8px;
   }
 
-  .sights-filter-btn {
-    width: auto;
-    padding: 6px 12px;
+  .filter-btn {
     font-size: 14px;
+    padding: 8px 10px;
+    text-align: center;
   }
 
   .sights-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 28px;
+  }
+
+  .sight-card {
+    max-width: none;
   }
 
   .sight-image {
-    height: 190px;
+    height: 180px;
   }
 
-  .sight-name {
-    font-size: 20px;
-  }
-
-  .sight-desc {
-    font-size: 14px;
-  }
 }
 
 /* =======================================
