@@ -309,149 +309,7 @@ body {
   font-size: 14px;
 }
 
-/* =========================
-   MOBILE (<= 600px)
-   ========================= */
-@media (max-width: 600px) {
-
-  /* Header: compact, links hidden, menu + title + search inline */
-  .site-header {
-    padding: 10px 14px;
-    gap: 10px;
-  }
-
-  /* turn the "Menu" button into a hamburger icon */
-  .menu-button {
-    width: 36px;
-    height: 36px;
-    padding: 0;
-    border-radius: 8px;
-    position: relative;
-    color: transparent;    
-  }
-  .menu-button::before,
-  .menu-button::after {
-    content: "";
-  }
-  .menu-button::before {
-    /* 3 bars using a gradient */
-    content: "";
-    position: absolute;
-    inset: 0;
-    margin: 9px 8px;
-    background:
-      linear-gradient(#333 0 0, #333 0 0) 0 0/100% 2px no-repeat,
-      linear-gradient(#333 0 0, #333 0 0) 0 50%/100% 2px no-repeat,
-      linear-gradient(#333 0 0, #333 0 0) 0 100%/100% 2px no-repeat;
-  }
-
-  /* center the site title visually */
-  .site-title {
-    font-size: 22px;
-  }
-
-  /* hide the desktop nav; use side menu instead */
-  .site-nav { display: none; }
-
-  /* search: icon-only button on the right */
-  .right-header {
-    margin-left: auto;
-    gap: 10px;
-  }
-  .search-toggle {
-    padding: 8px;
-    width: 36px;
-    height: 36px;
-    border-radius: 18px;
-    justify-content: center;
-    font-size: 0;           /* hide “Search” text */
-  }
-  .search-toggle i { font-size: 16px; }
-
-  /* search dropdown placement */
-  .search-form {
-    top: 120%;
-    right: 0;
-  }
-
-  /* Hero: shorter on mobile */
-  .hero img {
-    height: 180px;
-    object-position: center 50%;
-  }
-
-  /* Intro text sizes */
-  .intro { padding: 24px 12px 26px; }
-  .intro h2 { font-size: 26px; margin-bottom: 6px; }
-  .intro p  { font-size: 14px; max-width: 90%; }
-
-  /* Intro video (your mp4) */
-  .intro-video { margin-top: 16px; }
-  .intro-video video {
-    width: 260px;
-    max-width: 92%;
-    border-radius: 8px;
-  }
-
-/* Feature links on mobile */
-.feature-links {
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 12px 24px;
-}
-
-.feature-card {
-  width: 100%;
-  max-width: 460px;
-  height: 52px;
-  border-radius: 6px;
-  background: var(--green);   
-  color: #fff;           
-  font-size: 18px;
-  font-family: "DM Serif Display", serif;
-  border: none;          
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-  /* Footer: stacked columns, centered */
-  .footer-inner {
-    padding: 26px 14px 18px;
-  }
-  .footer-title {
-    font-size: 22px;
-    margin-bottom: 14px;
-  }
-  .footer-columns {
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    text-align: center;
-  }
-  .footer-col h3 { margin-bottom: 6px; }
-
-  /* Newsletter: inline input + button on mobile (like your mock) */
-  .newsletter-form {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
-  .newsletter-form input[type="email"] {
-    width: 180px;
-  }
-
-  .footer-icons {
-    justify-content: center;
-  }
-
-  .footer-copy { font-size: 12px; }
-}
-
-/* ---------- ABOUT PAGE ---------- */
+/* ---------- ABOUT PAGE (DESKTOP) ---------- */
 
 .about-main {
   padding-bottom: 80px;
@@ -479,7 +337,6 @@ body {
   margin: 30px auto 0;
   border-radius: 6px;
 }
-
 
 /* Main content container */
 .about-content {
@@ -541,4 +398,217 @@ body {
 
 .about-card:hover {
   opacity: 0.93;
+}
+
+
+/* =========================
+   MOBILE (<= 600px)
+   ========================= */
+@media (max-width: 600px) {
+
+  /* Header: compact, links hidden, menu + title + search inline */
+  .site-header {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  /* turn the "Menu" button into a hamburger icon */
+  .menu-button {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 8px;
+    position: relative;
+    color: transparent;    
+  }
+  .menu-button::before,
+  .menu-button::after {
+    content: "";
+  }
+  .menu-button::before {
+    position: absolute;
+    inset: 0;
+    margin: 9px 8px;
+    background:
+      linear-gradient(#333 0 0, #333 0 0) 0 0/100% 2px no-repeat,
+      linear-gradient(#333 0 0, #333 0 0) 0 50%/100% 2px no-repeat,
+      linear-gradient(#333 0 0, #333 0 0) 0 100%/100% 2px no-repeat;
+  }
+
+  /* center the site title visually */
+  .site-title {
+    font-size: 22px;
+  }
+
+  /* hide the desktop nav; use side menu instead */
+  .site-nav { 
+    display: none; 
+  }
+
+  /* search: icon-only button on the right */
+  .right-header {
+    margin-left: auto;
+    gap: 10px;
+  }
+  .search-toggle {
+    padding: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    justify-content: center;
+    font-size: 0;           /* hide “Search” text */
+  }
+  .search-toggle i { font-size: 16px; }
+
+  /* search dropdown placement */
+  .search-form {
+    top: 120%;
+    right: 0;
+  }
+
+  /* Hero: shorter on mobile */
+  .hero img {
+    height: 180px;
+    object-position: center 50%;
+  }
+
+  /* Intro text sizes */
+  .intro { padding: 24px 12px 26px; }
+  .intro h2 { font-size: 26px; margin-bottom: 6px; }
+  .intro p  { font-size: 14px; max-width: 90%; }
+
+  /* Intro video (your mp4) */
+  .intro-video { margin-top: 16px; }
+  .intro-video video {
+    width: 260px;
+    max-width: 92%;
+    border-radius: 8px;
+  }
+
+  /* Feature links on mobile */
+  .feature-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 12px 24px;
+  }
+
+  .feature-card {
+    width: 100%;
+    max-width: 460px;
+    height: 52px;
+    border-radius: 6px;
+    background: var(--green);   
+    color: #fff;           
+    font-size: 18px;
+    font-family: "DM Serif Display", serif;
+    border: none;          
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Footer: stacked columns, centered */
+  .footer-inner {
+    padding: 26px 14px 18px;
+  }
+  .footer-title {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .footer-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+  .footer-col h3 { margin-bottom: 6px; }
+
+  /* Newsletter: inline input + button on mobile */
+  .newsletter-form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  .newsletter-form input[type="email"] {
+    width: 180px;
+  }
+
+  .footer-icons {
+    justify-content: center;
+  }
+
+  .footer-copy { 
+    font-size: 12px; 
+  }
+
+  /* ---------- ABOUT PAGE MOBILE ---------- */
+
+  .about-main {
+    padding-bottom: 50px;
+  }
+
+  .about-title {
+    margin-top: 30px;
+  }
+
+  .about-title h2 {
+    font-size: 26px;
+  }
+
+  /* Make the image full-width + shorter on mobile */
+  .about-hero img {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;               /* shorter for phone */
+    margin: 16px 0 0;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: center 25%;  /* still show more of the top */
+  }
+
+  .about-content {
+    max-width: 100%;
+    margin: 20px auto 0;
+    padding: 0 16px;
+  }
+
+  .about-text h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .about-section {
+    margin-top: 24px;
+  }
+
+  .about-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  /* stack the cards full-width like home mobile */
+  .about-grid {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding-top: 4px;
+  }
+
+  .about-card {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    min-height: 56px;
+    font-size: 16px;
+    padding: 10px 12px;
+    border-radius: 6px;
+  }
 }
