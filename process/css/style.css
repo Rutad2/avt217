@@ -68,10 +68,6 @@ body {
   color: #000;
 }
 
-.site-nav a:hover {
-  text-decoration: underline;
-}
-
 /* search */
 .search-box {
   position: relative;
