@@ -45,6 +45,15 @@ body {
   font-size: 30px;
 }
 
+.site-title a {
+  text-decoration: none;
+  color: #000;
+}
+
+.site-title a:hover {
+  text-decoration: underline;
+}
+
 .right-header {
   display: flex;
   align-items: center;
